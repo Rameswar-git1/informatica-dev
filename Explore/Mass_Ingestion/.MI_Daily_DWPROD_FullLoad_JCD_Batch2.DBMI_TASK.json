@@ -1,0 +1,87 @@
+{
+  "objectInfo" : {
+    "id" : "8cpZZZ4vI7hgCQZK3K91CG",
+    "name" : "MI_Daily_DWPROD_FullLoad_JCD_Batch2",
+    "type" : "DBMI_TASK",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "19862"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "dat",
+  "updateTime" : "2025-05-16T11:32:51.902Z",
+  "objectRefs" : [ {
+    "id" : "0guDKwMrJMibV2wEXVqFaM",
+    "name" : "ORACLE_EDW_2",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0192P80B00000000000W"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Dev Oracle Connection",
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "6lZC8XeBjgDcWK9xMBrOsY",
+    "name" : "ip-10-112-68-220.aws.safelite.net",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0192P825000000000003"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "70GcB0Ya5gFfoAfqPw8OCV",
+    "name" : "SNOWFLAKE_NONPROD_HERITAGEDB",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0192P80B00000000003M"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
