@@ -17,13 +17,13 @@
       } ],
       "additionalInfo" : {
         "description" : "",
-        "contentType" : null,
+        "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-05-19T18:42:56.642Z",
+  "updateTime" : "2025-05-19T18:45:08.903Z",
   "objectRefs" : [ {
     "id" : "1oR3QsXFuyylo3sLSuYZI8",
     "name" : "CN_Salesforce_US",
