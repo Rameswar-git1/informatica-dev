@@ -1,0 +1,4939 @@
+{
+  "content" : {
+    "description" : "testing 00",
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "Mapping_checkout",
+    "links" : [
+      {
+        "link" : "Source -> Target"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2024-02-28T13:11:37.085Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Id"
+            },
+            "name" : "Id",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OwnerId"
+            },
+            "name" : "OwnerId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsDeleted"
+            },
+            "name" : "IsDeleted",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AppointmentNumber"
+            },
+            "name" : "AppointmentNumber",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedDate"
+            },
+            "name" : "CreatedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedById"
+            },
+            "name" : "CreatedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedDate"
+            },
+            "name" : "LastModifiedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedById"
+            },
+            "name" : "LastModifiedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SystemModstamp"
+            },
+            "name" : "SystemModstamp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastViewedDate"
+            },
+            "name" : "LastViewedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastReferencedDate"
+            },
+            "name" : "LastReferencedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordId"
+            },
+            "name" : "ParentRecordId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordType"
+            },
+            "name" : "ParentRecordType",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AccountId"
+            },
+            "name" : "AccountId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WorkTypeId"
+            },
+            "name" : "WorkTypeId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ContactId"
+            },
+            "name" : "ContactId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Street"
+            },
+            "name" : "Street",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "City"
+            },
+            "name" : "City",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PostalCode"
+            },
+            "name" : "PostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Country"
+            },
+            "name" : "Country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Latitude"
+            },
+            "name" : "Latitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "Longitude"
+            },
+            "name" : "Longitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "GeocodeAccuracy"
+            },
+            "name" : "GeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Description"
+            },
+            "name" : "Description",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EarliestStartTime"
+            },
+            "name" : "EarliestStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "DueDate"
+            },
+            "name" : "DueDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Duration"
+            },
+            "name" : "Duration",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ArrivalWindowStartTime"
+            },
+            "name" : "ArrivalWindowStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ArrivalWindowEndTime"
+            },
+            "name" : "ArrivalWindowEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Status"
+            },
+            "name" : "Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SchedStartTime"
+            },
+            "name" : "SchedStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "SchedEndTime"
+            },
+            "name" : "SchedEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualStartTime"
+            },
+            "name" : "ActualStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualEndTime"
+            },
+            "name" : "ActualEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualDuration"
+            },
+            "name" : "ActualDuration",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "DurationType"
+            },
+            "name" : "DurationType",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DurationInMinutes"
+            },
+            "name" : "DurationInMinutes",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ServiceTerritoryId"
+            },
+            "name" : "ServiceTerritoryId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Subject"
+            },
+            "name" : "Subject",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordStatusCategory"
+            },
+            "name" : "ParentRecordStatusCategory",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "StatusCategory"
+            },
+            "name" : "StatusCategory",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ServiceNote"
+            },
+            "name" : "ServiceNote",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RelatedBundleId"
+            },
+            "name" : "RelatedBundleId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsManuallyBundled"
+            },
+            "name" : "IsManuallyBundled",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsBundleMember"
+            },
+            "name" : "IsBundleMember",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsBundle"
+            },
+            "name" : "IsBundle",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BundlePolicyId"
+            },
+            "name" : "BundlePolicyId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsOffsiteAppointment"
+            },
+            "name" : "IsOffsiteAppointment",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ApptBookingInfoUrl"
+            },
+            "name" : "ApptBookingInfoUrl",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Date_Scheduled__c"
+            },
+            "name" : "Date_Scheduled__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Phone_Number__c"
+            },
+            "name" : "Technician_Phone_Number__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Route_Code__c"
+            },
+            "name" : "Route_Code__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Rescheduled__c"
+            },
+            "name" : "Rescheduled__c",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GUID__c"
+            },
+            "name" : "GUID__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Parent_GUID__c"
+            },
+            "name" : "Parent_GUID__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Work_Order__c"
+            },
+            "name" : "Work_Order__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Duration__c"
+            },
+            "name" : "Job_Duration__c",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Date__c"
+            },
+            "name" : "Local_Date__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_End_Time__c"
+            },
+            "name" : "Local_End_Time__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Start_Time__c"
+            },
+            "name" : "Local_Start_Time__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalDate__c"
+            },
+            "name" : "LocalDate__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "External_Status__c"
+            },
+            "name" : "External_Status__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Building_Name__c"
+            },
+            "name" : "Building_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Business_Name__c"
+            },
+            "name" : "Business_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Reschedule_Count__c"
+            },
+            "name" : "Reschedule_Count__c",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Schedule_Period__c"
+            },
+            "name" : "Schedule_Period__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_First_Name__c"
+            },
+            "name" : "Technician_First_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Id__c"
+            },
+            "name" : "Technician_Id__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Last_Name__c"
+            },
+            "name" : "Technician_Last_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "JobTaskId__c"
+            },
+            "name" : "JobTaskId__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Estimated_Service_Time__c"
+            },
+            "name" : "Estimated_Service_Time__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalEndTime__c"
+            },
+            "name" : "LocalEndTime__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalStartTime__c"
+            },
+            "name" : "LocalStartTime__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Date_Long__c"
+            },
+            "name" : "Local_Date_Long__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1300,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Appointment_Change_Reason__c"
+            },
+            "name" : "Appointment_Change_Reason__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Drop_Off_Type__c"
+            },
+            "name" : "Drop_Off_Type__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Facility_Type__c"
+            },
+            "name" : "Facility_Type__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Wait_With_Vehicle__c"
+            },
+            "name" : "Wait_With_Vehicle__c",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@1oR3QsXFuyylo3sLSuYZI8",
+          "connectionName" : "CN_Salesforce_US",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Salesforce",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 100000,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "ServiceAppointment",
+            "label" : "Service Appointment",
+            "objectName" : "ServiceAppointment",
+            "path" : "ServiceAppointment",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Id",
+                "fieldType" : "CONNECTOR",
+                "label" : "Service Appointment ID",
+                "nativeName" : "Id",
+                "nativeType" : "id",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "OwnerId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Owner ID",
+                "nativeName" : "OwnerId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "IsDeleted",
+                "fieldType" : "CONNECTOR",
+                "label" : "Deleted",
+                "nativeName" : "IsDeleted",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "AppointmentNumber",
+                "fieldType" : "CONNECTOR",
+                "label" : "Appointment Number",
+                "nativeName" : "AppointmentNumber",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created Date",
+                "nativeName" : "CreatedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created By ID",
+                "nativeName" : "CreatedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified Date",
+                "nativeName" : "LastModifiedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified By ID",
+                "nativeName" : "LastModifiedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "SystemModstamp",
+                "fieldType" : "CONNECTOR",
+                "label" : "System Modstamp",
+                "nativeName" : "SystemModstamp",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LastViewedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Viewed Date",
+                "nativeName" : "LastViewedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LastReferencedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Referenced Date",
+                "nativeName" : "LastReferencedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent Record ID",
+                "nativeName" : "ParentRecordId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordType",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent Record Type",
+                "nativeName" : "ParentRecordType",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "AccountId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Account ID",
+                "nativeName" : "AccountId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "WorkTypeId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Work Type ID",
+                "nativeName" : "WorkTypeId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ContactId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Contact ID",
+                "nativeName" : "ContactId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Street",
+                "fieldType" : "CONNECTOR",
+                "label" : "Street",
+                "nativeName" : "Street",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "City",
+                "fieldType" : "CONNECTOR",
+                "label" : "City",
+                "nativeName" : "City",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "CONNECTOR",
+                "label" : "State/Province",
+                "nativeName" : "State",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "PostalCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Zip/Postal Code",
+                "nativeName" : "PostalCode",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Country",
+                "fieldType" : "CONNECTOR",
+                "label" : "Country",
+                "nativeName" : "Country",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Latitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Latitude",
+                "nativeName" : "Latitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Longitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Longitude",
+                "nativeName" : "Longitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "GeocodeAccuracy",
+                "fieldType" : "CONNECTOR",
+                "label" : "Geocode Accuracy",
+                "nativeName" : "GeocodeAccuracy",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Description",
+                "fieldType" : "CONNECTOR",
+                "label" : "Description",
+                "nativeName" : "Description",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "EarliestStartTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Earliest Start Permitted",
+                "nativeName" : "EarliestStartTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "DueDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Due Date",
+                "nativeName" : "DueDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Duration",
+                "fieldType" : "CONNECTOR",
+                "label" : "Duration",
+                "nativeName" : "Duration",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ArrivalWindowStartTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Arrival Window Start",
+                "nativeName" : "ArrivalWindowStartTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ArrivalWindowEndTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Arrival Window End",
+                "nativeName" : "ArrivalWindowEndTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Status",
+                "fieldType" : "CONNECTOR",
+                "label" : "Status",
+                "nativeName" : "Status",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "SchedStartTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Scheduled Start",
+                "nativeName" : "SchedStartTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "SchedEndTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Scheduled End",
+                "nativeName" : "SchedEndTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualStartTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Actual Start",
+                "nativeName" : "ActualStartTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualEndTime",
+                "fieldType" : "CONNECTOR",
+                "label" : "Actual End",
+                "nativeName" : "ActualEndTime",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualDuration",
+                "fieldType" : "CONNECTOR",
+                "label" : "Actual Duration (Minutes)",
+                "nativeName" : "ActualDuration",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "DurationType",
+                "fieldType" : "CONNECTOR",
+                "label" : "Duration Type",
+                "nativeName" : "DurationType",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "DurationInMinutes",
+                "fieldType" : "CONNECTOR",
+                "label" : "Duration in Minutes",
+                "nativeName" : "DurationInMinutes",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ServiceTerritoryId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Territory ID",
+                "nativeName" : "ServiceTerritoryId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Subject",
+                "fieldType" : "CONNECTOR",
+                "label" : "Subject",
+                "nativeName" : "Subject",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordStatusCategory",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent Record Status Category",
+                "nativeName" : "ParentRecordStatusCategory",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "StatusCategory",
+                "fieldType" : "CONNECTOR",
+                "label" : "Status Category",
+                "nativeName" : "StatusCategory",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ServiceNote",
+                "fieldType" : "CONNECTOR",
+                "label" : "Service Note",
+                "nativeName" : "ServiceNote",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "RelatedBundleId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Related Bundle ID",
+                "nativeName" : "RelatedBundleId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "IsManuallyBundled",
+                "fieldType" : "CONNECTOR",
+                "label" : "Manually Bundled",
+                "nativeName" : "IsManuallyBundled",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "IsBundleMember",
+                "fieldType" : "CONNECTOR",
+                "label" : "Bundle Member",
+                "nativeName" : "IsBundleMember",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "IsBundle",
+                "fieldType" : "CONNECTOR",
+                "label" : "Bundle",
+                "nativeName" : "IsBundle",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "BundlePolicyId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Appointment Bundle Policy ID",
+                "nativeName" : "BundlePolicyId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "IsOffsiteAppointment",
+                "fieldType" : "CONNECTOR",
+                "label" : "Offsite Appointment",
+                "nativeName" : "IsOffsiteAppointment",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "ApptBookingInfoUrl",
+                "fieldType" : "CONNECTOR",
+                "label" : "Appointment Booking URL",
+                "nativeName" : "ApptBookingInfoUrl",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 4000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Date_Scheduled__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Date Scheduled",
+                "nativeName" : "Date_Scheduled__c",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Phone_Number__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Technician  Phone Number",
+                "nativeName" : "Technician_Phone_Number__c",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Route_Code__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Route Code",
+                "nativeName" : "Route_Code__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Rescheduled__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Rescheduled",
+                "nativeName" : "Rescheduled__c",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "GUID__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "GUID",
+                "nativeName" : "GUID__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Parent_GUID__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Parent GUID",
+                "nativeName" : "Parent_GUID__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Work_Order__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Work Order",
+                "nativeName" : "Work_Order__c",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Duration__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job Duration",
+                "nativeName" : "Job_Duration__c",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Date__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Scheduled Local Appointment Date",
+                "nativeName" : "Local_Date__c",
+                "nativeType" : "date",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_End_Time__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Scheduled Local End Time",
+                "nativeName" : "Local_End_Time__c",
+                "nativeType" : "time",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Start_Time__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Scheduled Local Start Time",
+                "nativeName" : "Local_Start_Time__c",
+                "nativeType" : "time",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalDate__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Local Date",
+                "nativeName" : "LocalDate__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "External_Status__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "External Status",
+                "nativeName" : "External_Status__c",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Building_Name__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Building Name",
+                "nativeName" : "Building_Name__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Business_Name__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Business Name",
+                "nativeName" : "Business_Name__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Reschedule_Count__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Reschedule Count",
+                "nativeName" : "Reschedule_Count__c",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Schedule_Period__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Schedule Period",
+                "nativeName" : "Schedule_Period__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_First_Name__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Technician First Name",
+                "nativeName" : "Technician_First_Name__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Id__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Technician Id",
+                "nativeName" : "Technician_Id__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Last_Name__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Technician Last Name",
+                "nativeName" : "Technician_Last_Name__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "JobTaskId__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Job Task Id",
+                "nativeName" : "JobTaskId__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Estimated_Service_Time__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Estimated Service Time",
+                "nativeName" : "Estimated_Service_Time__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalEndTime__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Local End Time",
+                "nativeName" : "LocalEndTime__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalStartTime__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Local Start Time",
+                "nativeName" : "LocalStartTime__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Date_Long__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Local Date Long",
+                "nativeName" : "Local_Date_Long__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 1300,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Appointment_Change_Reason__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Appointment Change Reason",
+                "nativeName" : "Appointment_Change_Reason__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Drop_Off_Type__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Drop Off Type",
+                "nativeName" : "Drop_Off_Type__c",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Facility_Type__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Facility Type",
+                "nativeName" : "Facility_Type__c",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              },
+              {
+                "name" : "Wait_With_Vehicle__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Wait With Vehicle",
+                "nativeName" : "Wait_With_Vehicle__c",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ServiceAppointment"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false",
+            "advancedFilterCondition" : "LastModifiedDate>=2024-02-26T10:00:24Z"
+          }
+        }
+      },
+      {
+        "createTime" : "2024-02-28T13:11:37.085Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Id"
+            },
+            "name" : "Id",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OwnerId"
+            },
+            "name" : "OwnerId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsDeleted"
+            },
+            "name" : "IsDeleted",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AppointmentNumber"
+            },
+            "name" : "AppointmentNumber",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedDate"
+            },
+            "name" : "CreatedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedById"
+            },
+            "name" : "CreatedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedDate"
+            },
+            "name" : "LastModifiedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedById"
+            },
+            "name" : "LastModifiedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SystemModstamp"
+            },
+            "name" : "SystemModstamp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastViewedDate"
+            },
+            "name" : "LastViewedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastReferencedDate"
+            },
+            "name" : "LastReferencedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordId"
+            },
+            "name" : "ParentRecordId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordType"
+            },
+            "name" : "ParentRecordType",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AccountId"
+            },
+            "name" : "AccountId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "WorkTypeId"
+            },
+            "name" : "WorkTypeId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ContactId"
+            },
+            "name" : "ContactId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Street"
+            },
+            "name" : "Street",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "City"
+            },
+            "name" : "City",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "State"
+            },
+            "name" : "State",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PostalCode"
+            },
+            "name" : "PostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Country"
+            },
+            "name" : "Country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Latitude"
+            },
+            "name" : "Latitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "Longitude"
+            },
+            "name" : "Longitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "GeocodeAccuracy"
+            },
+            "name" : "GeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Description"
+            },
+            "name" : "Description",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EarliestStartTime"
+            },
+            "name" : "EarliestStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "DueDate"
+            },
+            "name" : "DueDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Duration"
+            },
+            "name" : "Duration",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ArrivalWindowStartTime"
+            },
+            "name" : "ArrivalWindowStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ArrivalWindowEndTime"
+            },
+            "name" : "ArrivalWindowEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Status"
+            },
+            "name" : "Status",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SchedStartTime"
+            },
+            "name" : "SchedStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "SchedEndTime"
+            },
+            "name" : "SchedEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualStartTime"
+            },
+            "name" : "ActualStartTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualEndTime"
+            },
+            "name" : "ActualEndTime",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "ActualDuration"
+            },
+            "name" : "ActualDuration",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "DurationType"
+            },
+            "name" : "DurationType",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DurationInMinutes"
+            },
+            "name" : "DurationInMinutes",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "ServiceTerritoryId"
+            },
+            "name" : "ServiceTerritoryId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Subject"
+            },
+            "name" : "Subject",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ParentRecordStatusCategory"
+            },
+            "name" : "ParentRecordStatusCategory",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "StatusCategory"
+            },
+            "name" : "StatusCategory",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ServiceNote"
+            },
+            "name" : "ServiceNote",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RelatedBundleId"
+            },
+            "name" : "RelatedBundleId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsManuallyBundled"
+            },
+            "name" : "IsManuallyBundled",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsBundleMember"
+            },
+            "name" : "IsBundleMember",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsBundle"
+            },
+            "name" : "IsBundle",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "BundlePolicyId"
+            },
+            "name" : "BundlePolicyId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsOffsiteAppointment"
+            },
+            "name" : "IsOffsiteAppointment",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ApptBookingInfoUrl"
+            },
+            "name" : "ApptBookingInfoUrl",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Date_Scheduled__c"
+            },
+            "name" : "Date_Scheduled__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Phone_Number__c"
+            },
+            "name" : "Technician_Phone_Number__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Route_Code__c"
+            },
+            "name" : "Route_Code__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Rescheduled__c"
+            },
+            "name" : "Rescheduled__c",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GUID__c"
+            },
+            "name" : "GUID__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Parent_GUID__c"
+            },
+            "name" : "Parent_GUID__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Work_Order__c"
+            },
+            "name" : "Work_Order__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Job_Duration__c"
+            },
+            "name" : "Job_Duration__c",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Date__c"
+            },
+            "name" : "Local_Date__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_End_Time__c"
+            },
+            "name" : "Local_End_Time__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Start_Time__c"
+            },
+            "name" : "Local_Start_Time__c",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalDate__c"
+            },
+            "name" : "LocalDate__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "External_Status__c"
+            },
+            "name" : "External_Status__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Building_Name__c"
+            },
+            "name" : "Building_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Business_Name__c"
+            },
+            "name" : "Business_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Reschedule_Count__c"
+            },
+            "name" : "Reschedule_Count__c",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Schedule_Period__c"
+            },
+            "name" : "Schedule_Period__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_First_Name__c"
+            },
+            "name" : "Technician_First_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Id__c"
+            },
+            "name" : "Technician_Id__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Technician_Last_Name__c"
+            },
+            "name" : "Technician_Last_Name__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "JobTaskId__c"
+            },
+            "name" : "JobTaskId__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Estimated_Service_Time__c"
+            },
+            "name" : "Estimated_Service_Time__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalEndTime__c"
+            },
+            "name" : "LocalEndTime__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LocalStartTime__c"
+            },
+            "name" : "LocalStartTime__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Local_Date_Long__c"
+            },
+            "name" : "Local_Date_Long__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1300,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Appointment_Change_Reason__c"
+            },
+            "name" : "Appointment_Change_Reason__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Drop_Off_Type__c"
+            },
+            "name" : "Drop_Off_Type__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Facility_Type__c"
+            },
+            "name" : "Facility_Type__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Wait_With_Vehicle__c"
+            },
+            "name" : "Wait_With_Vehicle__c",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@4wU8Jzb04Z0dwefuGqyWMk",
+          "connectionName" : "IICS_S3_Salesforce",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "dataFormat" : {
+            "formatId" : "Flat",
+            "validateHSchema" : "false",
+            "attributes" : [
+              {
+                "name" : "delimiter",
+                "value" : ","
+              },
+              {
+                "name" : "escapeChar",
+                "value" : "\\"
+              },
+              {
+                "name" : "qualifier",
+                "value" : "\""
+              },
+              {
+                "name" : "qualifierMode",
+                "value" : "MINIMAL"
+              },
+              {
+                "name" : "disableEscapeChar",
+                "value" : "true"
+              },
+              {
+                "name" : "codePage",
+                "value" : "UTF-8"
+              },
+              {
+                "name" : "headerLineNumber",
+                "value" : "1"
+              },
+              {
+                "name" : "firstDataRow",
+                "value" : "2"
+              },
+              {
+                "name" : "targetHeader",
+                "value" : "With Header"
+              },
+              {
+                "name" : "importColumnFromFirstLine",
+                "value" : "true"
+              },
+              {
+                "name" : "generateHeader",
+                "value" : "true"
+              },
+              {
+                "name" : "fixedWidthMode",
+                "value" : "false"
+              },
+              {
+                "name" : "maxRowsToPreview",
+                "value" : "0"
+              }
+            ]
+          },
+          "object" : {
+            "name" : "serviceAppointment.csv",
+            "label" : "serviceAppointment.csv",
+            "path" : "serviceAppointment.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Id",
+                "fieldType" : "PARSER",
+                "label" : "Id",
+                "nativeName" : "Id",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "OwnerId",
+                "fieldType" : "PARSER",
+                "label" : "OwnerId",
+                "nativeName" : "OwnerId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "IsDeleted",
+                "fieldType" : "PARSER",
+                "label" : "IsDeleted",
+                "nativeName" : "IsDeleted",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "AppointmentNumber",
+                "fieldType" : "PARSER",
+                "label" : "AppointmentNumber",
+                "nativeName" : "AppointmentNumber",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedDate",
+                "fieldType" : "PARSER",
+                "label" : "CreatedDate",
+                "nativeName" : "CreatedDate",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedById",
+                "fieldType" : "PARSER",
+                "label" : "CreatedById",
+                "nativeName" : "CreatedById",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedDate",
+                "fieldType" : "PARSER",
+                "label" : "LastModifiedDate",
+                "nativeName" : "LastModifiedDate",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedById",
+                "fieldType" : "PARSER",
+                "label" : "LastModifiedById",
+                "nativeName" : "LastModifiedById",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "SystemModstamp",
+                "fieldType" : "PARSER",
+                "label" : "SystemModstamp",
+                "nativeName" : "SystemModstamp",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LastViewedDate",
+                "fieldType" : "PARSER",
+                "label" : "LastViewedDate",
+                "nativeName" : "LastViewedDate",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LastReferencedDate",
+                "fieldType" : "PARSER",
+                "label" : "LastReferencedDate",
+                "nativeName" : "LastReferencedDate",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordId",
+                "fieldType" : "PARSER",
+                "label" : "ParentRecordId",
+                "nativeName" : "ParentRecordId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordType",
+                "fieldType" : "PARSER",
+                "label" : "ParentRecordType",
+                "nativeName" : "ParentRecordType",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "AccountId",
+                "fieldType" : "PARSER",
+                "label" : "AccountId",
+                "nativeName" : "AccountId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "WorkTypeId",
+                "fieldType" : "PARSER",
+                "label" : "WorkTypeId",
+                "nativeName" : "WorkTypeId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ContactId",
+                "fieldType" : "PARSER",
+                "label" : "ContactId",
+                "nativeName" : "ContactId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Street",
+                "fieldType" : "PARSER",
+                "label" : "Street",
+                "nativeName" : "Street",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "City",
+                "fieldType" : "PARSER",
+                "label" : "City",
+                "nativeName" : "City",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "State",
+                "fieldType" : "PARSER",
+                "label" : "State",
+                "nativeName" : "State",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "PostalCode",
+                "fieldType" : "PARSER",
+                "label" : "PostalCode",
+                "nativeName" : "PostalCode",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Country",
+                "fieldType" : "PARSER",
+                "label" : "Country",
+                "nativeName" : "Country",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Latitude",
+                "fieldType" : "PARSER",
+                "label" : "Latitude",
+                "nativeName" : "Latitude",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Longitude",
+                "fieldType" : "PARSER",
+                "label" : "Longitude",
+                "nativeName" : "Longitude",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "GeocodeAccuracy",
+                "fieldType" : "PARSER",
+                "label" : "GeocodeAccuracy",
+                "nativeName" : "GeocodeAccuracy",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Description",
+                "fieldType" : "PARSER",
+                "label" : "Description",
+                "nativeName" : "Description",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "EarliestStartTime",
+                "fieldType" : "PARSER",
+                "label" : "EarliestStartTime",
+                "nativeName" : "EarliestStartTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "DueDate",
+                "fieldType" : "PARSER",
+                "label" : "DueDate",
+                "nativeName" : "DueDate",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Duration",
+                "fieldType" : "PARSER",
+                "label" : "Duration",
+                "nativeName" : "Duration",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ArrivalWindowStartTime",
+                "fieldType" : "PARSER",
+                "label" : "ArrivalWindowStartTime",
+                "nativeName" : "ArrivalWindowStartTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ArrivalWindowEndTime",
+                "fieldType" : "PARSER",
+                "label" : "ArrivalWindowEndTime",
+                "nativeName" : "ArrivalWindowEndTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Status",
+                "fieldType" : "PARSER",
+                "label" : "Status",
+                "nativeName" : "Status",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "SchedStartTime",
+                "fieldType" : "PARSER",
+                "label" : "SchedStartTime",
+                "nativeName" : "SchedStartTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "SchedEndTime",
+                "fieldType" : "PARSER",
+                "label" : "SchedEndTime",
+                "nativeName" : "SchedEndTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualStartTime",
+                "fieldType" : "PARSER",
+                "label" : "ActualStartTime",
+                "nativeName" : "ActualStartTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualEndTime",
+                "fieldType" : "PARSER",
+                "label" : "ActualEndTime",
+                "nativeName" : "ActualEndTime",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ActualDuration",
+                "fieldType" : "PARSER",
+                "label" : "ActualDuration",
+                "nativeName" : "ActualDuration",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "DurationType",
+                "fieldType" : "PARSER",
+                "label" : "DurationType",
+                "nativeName" : "DurationType",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "DurationInMinutes",
+                "fieldType" : "PARSER",
+                "label" : "DurationInMinutes",
+                "nativeName" : "DurationInMinutes",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 2,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ServiceTerritoryId",
+                "fieldType" : "PARSER",
+                "label" : "ServiceTerritoryId",
+                "nativeName" : "ServiceTerritoryId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Subject",
+                "fieldType" : "PARSER",
+                "label" : "Subject",
+                "nativeName" : "Subject",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ParentRecordStatusCategory",
+                "fieldType" : "PARSER",
+                "label" : "ParentRecordStatusCategory",
+                "nativeName" : "ParentRecordStatusCategory",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "StatusCategory",
+                "fieldType" : "PARSER",
+                "label" : "StatusCategory",
+                "nativeName" : "StatusCategory",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ServiceNote",
+                "fieldType" : "PARSER",
+                "label" : "ServiceNote",
+                "nativeName" : "ServiceNote",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "RelatedBundleId",
+                "fieldType" : "PARSER",
+                "label" : "RelatedBundleId",
+                "nativeName" : "RelatedBundleId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "IsManuallyBundled",
+                "fieldType" : "PARSER",
+                "label" : "IsManuallyBundled",
+                "nativeName" : "IsManuallyBundled",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "IsBundleMember",
+                "fieldType" : "PARSER",
+                "label" : "IsBundleMember",
+                "nativeName" : "IsBundleMember",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "IsBundle",
+                "fieldType" : "PARSER",
+                "label" : "IsBundle",
+                "nativeName" : "IsBundle",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "BundlePolicyId",
+                "fieldType" : "PARSER",
+                "label" : "BundlePolicyId",
+                "nativeName" : "BundlePolicyId",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "IsOffsiteAppointment",
+                "fieldType" : "PARSER",
+                "label" : "IsOffsiteAppointment",
+                "nativeName" : "IsOffsiteAppointment",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "ApptBookingInfoUrl",
+                "fieldType" : "PARSER",
+                "label" : "ApptBookingInfoUrl",
+                "nativeName" : "ApptBookingInfoUrl",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 4000,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Date_Scheduled__c",
+                "fieldType" : "PARSER",
+                "label" : "Date_Scheduled__c",
+                "nativeName" : "Date_Scheduled__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Phone_Number__c",
+                "fieldType" : "PARSER",
+                "label" : "Technician_Phone_Number__c",
+                "nativeName" : "Technician_Phone_Number__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Route_Code__c",
+                "fieldType" : "PARSER",
+                "label" : "Route_Code__c",
+                "nativeName" : "Route_Code__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Rescheduled__c",
+                "fieldType" : "PARSER",
+                "label" : "Rescheduled__c",
+                "nativeName" : "Rescheduled__c",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "GUID__c",
+                "fieldType" : "PARSER",
+                "label" : "GUID__c",
+                "nativeName" : "GUID__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Parent_GUID__c",
+                "fieldType" : "PARSER",
+                "label" : "Parent_GUID__c",
+                "nativeName" : "Parent_GUID__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Work_Order__c",
+                "fieldType" : "PARSER",
+                "label" : "Work_Order__c",
+                "nativeName" : "Work_Order__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Job_Duration__c",
+                "fieldType" : "PARSER",
+                "label" : "Job_Duration__c",
+                "nativeName" : "Job_Duration__c",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Date__c",
+                "fieldType" : "PARSER",
+                "label" : "Local_Date__c",
+                "nativeName" : "Local_Date__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_End_Time__c",
+                "fieldType" : "PARSER",
+                "label" : "Local_End_Time__c",
+                "nativeName" : "Local_End_Time__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Start_Time__c",
+                "fieldType" : "PARSER",
+                "label" : "Local_Start_Time__c",
+                "nativeName" : "Local_Start_Time__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 29,
+                "scale" : 9,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalDate__c",
+                "fieldType" : "PARSER",
+                "label" : "LocalDate__c",
+                "nativeName" : "LocalDate__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "External_Status__c",
+                "fieldType" : "PARSER",
+                "label" : "External_Status__c",
+                "nativeName" : "External_Status__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Building_Name__c",
+                "fieldType" : "PARSER",
+                "label" : "Building_Name__c",
+                "nativeName" : "Building_Name__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Business_Name__c",
+                "fieldType" : "PARSER",
+                "label" : "Business_Name__c",
+                "nativeName" : "Business_Name__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Reschedule_Count__c",
+                "fieldType" : "PARSER",
+                "label" : "Reschedule_Count__c",
+                "nativeName" : "Reschedule_Count__c",
+                "nativeType" : "flat_number",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Schedule_Period__c",
+                "fieldType" : "PARSER",
+                "label" : "Schedule_Period__c",
+                "nativeName" : "Schedule_Period__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_First_Name__c",
+                "fieldType" : "PARSER",
+                "label" : "Technician_First_Name__c",
+                "nativeName" : "Technician_First_Name__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Id__c",
+                "fieldType" : "PARSER",
+                "label" : "Technician_Id__c",
+                "nativeName" : "Technician_Id__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Technician_Last_Name__c",
+                "fieldType" : "PARSER",
+                "label" : "Technician_Last_Name__c",
+                "nativeName" : "Technician_Last_Name__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "JobTaskId__c",
+                "fieldType" : "PARSER",
+                "label" : "JobTaskId__c",
+                "nativeName" : "JobTaskId__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Estimated_Service_Time__c",
+                "fieldType" : "PARSER",
+                "label" : "Estimated_Service_Time__c",
+                "nativeName" : "Estimated_Service_Time__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalEndTime__c",
+                "fieldType" : "PARSER",
+                "label" : "LocalEndTime__c",
+                "nativeName" : "LocalEndTime__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "LocalStartTime__c",
+                "fieldType" : "PARSER",
+                "label" : "LocalStartTime__c",
+                "nativeName" : "LocalStartTime__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Local_Date_Long__c",
+                "fieldType" : "PARSER",
+                "label" : "Local_Date_Long__c",
+                "nativeName" : "Local_Date_Long__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 1300,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Appointment_Change_Reason__c",
+                "fieldType" : "PARSER",
+                "label" : "Appointment_Change_Reason__c",
+                "nativeName" : "Appointment_Change_Reason__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Drop_Off_Type__c",
+                "fieldType" : "PARSER",
+                "label" : "Drop_Off_Type__c",
+                "nativeName" : "Drop_Off_Type__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Facility_Type__c",
+                "fieldType" : "PARSER",
+                "label" : "Facility_Type__c",
+                "nativeName" : "Facility_Type__c",
+                "nativeType" : "flat_string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Wait_With_Vehicle__c",
+                "fieldType" : "PARSER",
+                "label" : "Wait_With_Vehicle__c",
+                "nativeName" : "Wait_With_Vehicle__c",
+                "nativeType" : "flat_bigint",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "partitionOrder",
+                    "value" : "0"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "serviceAppointment.csv"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-05-25 06:23:39 PDT"
+}
