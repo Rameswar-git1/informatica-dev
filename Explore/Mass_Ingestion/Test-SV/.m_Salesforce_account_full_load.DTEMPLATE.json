@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test",
+        "description" : "test-cicd",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-05-27T17:48:49.599Z",
+  "updateTime" : "2025-05-27T18:33:34.046Z",
   "objectRefs" : [ {
     "id" : "1oR3QsXFuyylo3sLSuYZI8",
     "name" : "CN_Salesforce_US",

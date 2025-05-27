@@ -1,6 +1,6 @@
 {
   "content" : {
-    "description" : "test",
+    "description" : "test-cicd",
     "allowMaxFieldLength" : "false",
     "bigIntConvertType" : "ONLY_BIGINT",
     "documentType" : "MAPPING",
@@ -7954,5 +7954,5 @@
       }
     ]
   },
-  "vcsExportTime" : "2025-05-27 10:48:49 PDT"
+  "vcsExportTime" : "2025-05-27 11:33:33 PDT"
 }
