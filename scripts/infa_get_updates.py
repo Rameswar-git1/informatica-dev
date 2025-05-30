@@ -1,3 +1,4 @@
+
 import requests
 import os
 import json
@@ -35,7 +36,7 @@ for x in r_filtered:
         sys.exit(99)
 
     test_json = t.json()
-    PARAMS = "?runId=" + str(test_json['runId'])
+    PARAMS = f"?runId={test_json['runId']}&taskId={test_json['taskId']}"
 
     STATE = 0
 
