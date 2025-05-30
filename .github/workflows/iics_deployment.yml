@@ -92,7 +92,7 @@ jobs:
             pip install requests
 
       - name: Set default username
-        run: git config --global user.email "bbird@informatica.com"; git config --global user.name "Brandon Bird"
+        run: git config --global user.email "Rameswara.Reddy@safelite.com"; git config --global user.name "Rameswar-git1"
 
       - name: Commit changes to UAT
         run: cd ./informatica_qa; git fetch --all; git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}; git push
