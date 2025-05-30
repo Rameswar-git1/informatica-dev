@@ -1,6 +1,6 @@
 {
   "content" : {
-    "description" : "testing latest",
+    "description" : "testing latest ci/cd testing ",
     "allowMaxFieldLength" : "false",
     "bigIntConvertType" : "ONLY_BIGINT",
     "documentType" : "MAPPING",
@@ -4935,5 +4935,5 @@
       }
     ]
   },
-  "vcsExportTime" : "2025-05-27 10:27:23 PDT"
+  "vcsExportTime" : "2025-05-30 01:22:37 PDT"
 }

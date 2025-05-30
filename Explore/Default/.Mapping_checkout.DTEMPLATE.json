@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "testing latest",
+        "description" : "testing latest ci/cd testing ",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-05-27T17:27:23.260Z",
+  "updateTime" : "2025-05-30T08:22:37.455Z",
   "objectRefs" : [ {
     "id" : "1oR3QsXFuyylo3sLSuYZI8",
     "name" : "CN_Salesforce_US",
