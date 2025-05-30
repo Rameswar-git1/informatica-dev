@@ -74,7 +74,7 @@ jobs:
         with:
           repository: Rameswar-git1/informatica_qa
           ref: UAT
-          token: ${{ secrets.GH_TOKEN }}
+          token: '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'      #${{ secrets.GH_TOKEN }}
           path: informatica_qa
 
       - uses: actions/checkout@v3
