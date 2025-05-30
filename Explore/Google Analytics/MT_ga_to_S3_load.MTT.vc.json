@@ -1,0 +1,188 @@
+{
+  "name" : "MT_ga_to_S3_load",
+  "runtimeEnvironmentId" : "@6lZC8XeBjgDcWK9xMBrOsY",
+  "runtimeEnvironmentName" : "ip-10-112-68-220.aws.safelite.net",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$Src_GCP$",
+      "type" : "SOURCE",
+      "label" : "Src_GCP",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "originalPath" : "Src_GCP"
+      },
+      "sourceConnectionId" : "@8Kcx5XaO6MMiTw1tdzR1sJ",
+      "connectionName" : "Google BigQuery_V2",
+      "sourceObject" : "DUMMY_Src_GCP",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "customQuery" : "Select distinct \np.localProductRefundAmount\n,p.isClick\n,p.isImpression\n,p.productRefundAmount\n,p.productQuantity\n,p.localProductPrice\n,p.productPrice\n,p.localProductRevenue\n,p.productRevenue\n,p.productBrand\n,p.productVariant\n,p.v2ProductCategory\n,p.v2ProductName\n,p.productSKU\n,visitorId\n,visitNumber\n,visitId\n,visitStartTime\n,date\n,totals.sessionQualityDim\n,totals.totalTransactionRevenue\n,totals.timeOnScreen\n,totals.uniqueScreenviews\n,totals.screenviews\n,totals.newVisits\n,totals.transactionRevenue\n,totals.transactions\n,totals.bounces\n,totals.timeOnSite\n,totals.pageviews\n,totals.hits\n,totals.visits\n,trafficSource.campaignCode\n,trafficSource.isTrueDirect\n,trafficSource.adwordsClickInfo.isVideoAd\n,trafficSource.adwordsClickInfo.targetingCriteria.boomUserlistId\n,trafficSource.adwordsClickInfo.adNetworkType\n,trafficSource.adwordsClickInfo.customerId\n,trafficSource.adwordsClickInfo.gclId\n,trafficSource.adwordsClickInfo.criteriaParameters\n,trafficSource.adwordsClickInfo.slot\n,trafficSource.adwordsClickInfo.page\n,trafficSource.adwordsClickInfo.criteriaId\n,trafficSource.adwordsClickInfo.creativeId\n,trafficSource.adwordsClickInfo.adGroupId\n,trafficSource.adwordsClickInfo.campaignId\n,trafficSource.adContent\n,trafficSource.keyword\n,trafficSource.medium\n,trafficSource.source\n,trafficSource.campaign\n,trafficSource.referralPath\n,device.deviceCategory\n,device.screenResolution\n,device.screenColors\n,device.language\n,device.javaEnabled\n,device.flashVersion\n,device.mobileDeviceMarketingName\n,device.mobileDeviceInfo\n,device.mobileInputSelector\n,device.mobileDeviceModel\n,device.mobileDeviceBranding\n,device.isMobile\n,device.operatingSystemVersion\n,device.operatingSystem\n,device.browserSize\n,device.browserVersion\n,device.browser\n,geoNetwork.networkLocation\n,geoNetwork.longitude\n,geoNetwork.latitude\n,geoNetwork.networkDomain\n,geoNetwork.cityId\n,geoNetwork.city\n,geoNetwork.metro\n,geoNetwork.region\n,geoNetwork.country\n,geoNetwork.subContinent\n,geoNetwork.continent\n,h.dataSource\n,h.contentGroup.contentGroupUniqueViews5\n,h.contentGroup.contentGroupUniqueViews4\n,h.contentGroup.contentGroupUniqueViews3\n,h.contentGroup.contentGroupUniqueViews2\n,h.contentGroup.contentGroupUniqueViews1\n,h.contentGroup.previousContentGroup5\n,h.contentGroup.previousContentGroup4\n,h.contentGroup.previousContentGroup3\n,h.contentGroup.previousContentGroup2\n,h.contentGroup.previousContentGroup1\n,h.contentGroup.contentGroup5\n,h.contentGroup.contentGroup4\n,h.contentGroup.contentGroup3\n,h.contentGroup.contentGroup2\n,h.contentGroup.contentGroup1\n,h.sourcePropertyInfo.sourcePropertyTrackingId\n,h.sourcePropertyInfo.sourcePropertyDisplayName\n,h.latencyTracking.userTimingLabel\n,h.latencyTracking.userTimingCategory\n,h.latencyTracking.userTimingVariable\n,h.latencyTracking.userTimingSample\n,h.latencyTracking.userTimingValue\n,h.latencyTracking.domContentLoadedTime\n,h.latencyTracking.domInteractiveTime\n,h.latencyTracking.domLatencyMetricsSample\n,h.latencyTracking.serverResponseTime\n,h.latencyTracking.serverConnectionTime\n,h.latencyTracking.domainLookupTime\n,h.latencyTracking.speedMetricsSample\n,h.latencyTracking.redirectionTime\n,h.latencyTracking.pageDownloadTime\n,h.latencyTracking.pageLoadTime\n,h.latencyTracking.pageLoadSample\n,h.social.socialInteractionNetworkAction\n,h.social.hasSocialSourceReferral\n,h.social.uniqueSocialInteractions\n,h.social.socialNetwork\n,h.social.socialInteractionTarget\n,h.social.socialInteractions\n,h.social.socialInteractionAction\n,h.social.socialInteractionNetwork\n,h.type\n,h.publisher.dfpNetworkId\n,h.publisher.dfpAdUnits\n,h.publisher.dfpAdGroup\n,h.publisher.adsRevenue\n,h.publisher.adsClicked\n,h.publisher.adsPagesViewed\n,h.publisher.measurableAdsViewed\n,h.publisher.viewableAdsViewed\n,h.publisher.adsUnitsMatched\n,h.publisher.adsUnitsViewed\n,h.publisher.adsViewed\n,h.publisher.adxPagesViewed\n,h.publisher.adxViewableImpressions\n,h.publisher.adxRevenue\n,h.publisher.adxQueries\n,h.publisher.adxMeasurableImpressions\n,h.publisher.adxMatchedQueries\n,h.publisher.adxImpressions\n,h.publisher.adxClicks\n,h.publisher.adxBackfillDfpPagesViewed\n,h.publisher.adxBackfillDfpViewableImpressions\n,h.publisher.adxBackfillDfpRevenueCpc\n,h.publisher.adxBackfillDfpRevenueCpm\n,h.publisher.adxBackfillDfpQueries\n,h.publisher.adxBackfillDfpMeasurableImpressions\n,h.publisher.adxBackfillDfpMatchedQueries\n,h.publisher.adxBackfillDfpImpressions\n,h.publisher.adxBackfillDfpClicks\n,h.publisher.adsenseBackfillDfpPagesViewed\n,h.publisher.adsenseBackfillDfpViewableImpressions\n,h.publisher.adsenseBackfillDfpRevenueCpc\n,h.publisher.adsenseBackfillDfpRevenueCpm\n,h.publisher.adsenseBackfillDfpQueries\n,h.publisher.adsenseBackfillDfpMeasurableImpressions\n,h.publisher.adsenseBackfillDfpMatchedQueries\n,h.publisher.adsenseBackfillDfpImpressions\n,h.publisher.adsenseBackfillDfpClicks\n,h.publisher.dfpPagesViewed\n,h.publisher.dfpViewableImpressions\n,h.publisher.dfpRevenueCpc\n,h.publisher.dfpRevenueCpm\n,h.publisher.dfpQueries\n,h.publisher.dfpMeasurableImpressions\n,h.publisher.dfpMatchedQueries\n,h.publisher.dfpImpressions\n,h.publisher.dfpClicks\n,h.refund.localRefundAmount\n,h.refund.refundAmount\n,h.promotionActionInfo.promoIsClick\n,h.promotionActionInfo.promoIsView\n,h.page.pagePathLevel4\n,h.page.pagePathLevel3\n,h.page.pagePathLevel2\n,h.page.pagePathLevel1\n,h.page.searchCategory\n,h.page.searchKeyword\n,h.page.pageTitle\n,h.page.hostname\n,h.page.pagePath\n,h.referer\n,h.isExit\n,h.isEntrance\n,h.isInteraction\n,h.isSecure\n,h.minute\n,h.hour\n,h.time\n,h.hitNumber\n,h.eventInfo.eventValue\n,h.eventInfo.eventLabel\n,h.eventInfo.eventAction\n,h.eventInfo.eventCategory\n,h.exceptionInfo.fatalExceptions\n,h.exceptionInfo.exceptions\n,h.exceptionInfo.isFatal\n,h.exceptionInfo.description as Exception_desc\n,h.appInfo.screenDepth\n,h.appInfo.exitScreenName\n,h.appInfo.landingScreenName\n,h.appInfo.screenName\n,h.appInfo.appId\n,h.appInfo.appVersion\n,h.appInfo.appName\n,h.appInfo.appInstallerId\n,h.appInfo.installerId\n,h.appInfo.id\n,h.appInfo.version\n,h.appInfo.name\n,h.item.localItemRevenue\n,h.item.currencyCode\n,h.item.itemRevenue\n,h.item.itemQuantity\n,h.item.productSku as Item_ProductSku\n,h.item.productCategory as Item_ProductCategory\n,h.item.productName as Item_Product_Name\n,h.item.transactionId \n,transaction.transactionCoupon as Transaction_transactionCoupon\n,transaction.localTransactionShipping\tas Transaction_localTransactionShipping\n,transaction.localTransactionTax as Transaction_localTransactionTax \n,transaction.localTransactionRevenue\t as Transaction_localTransactionRevenue\t\n,transaction.currencyCode\tas Transaction_currencyCode\n,transaction.affiliation\tas Transaction_affiliation\n,transaction.transactionShipping\t as Transaction_transactionShipping\n,transaction.transactionTax\tas Transaction_transactionTax\t\n,transaction.transactionRevenue as Transaction_transactionRevenue\n,transaction.transactionId\tas Transaction_transactionId\nfrom `safelite-us-website.86291932.ga_sessions_*`,\n UNNEST(hits) as h,\nUNNEST(h.product) as p\nwhere _TABLE_SUFFIX=(SELECT\n FORMAT_DATE('%Y%m%d',DATE_SUB(CURRENT_DATE(), INTERVAL 1 DAY)))",
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "DUMMY_Src_GCP",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$Target_s3$",
+      "type" : "TARGET",
+      "label" : "Target_s3",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "Target_s3"
+      },
+      "targetConnectionId" : "@6TBe9SU3x0ChPe2LmWYBK6",
+      "connectionName" : "IICS_S3_Kronos_2",
+      "targetObject" : "$Target_s3",
+      "targetObjectLabel" : "engineering/safelite/NA/googleAnalytics/ga_sessions/$$timedatetest/%y-%m-%d.csv",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "newObjectName" : "$Target_s3",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : true,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "$Target_s3",
+      "objectLabel" : "engineering/safelite/NA/googleAnalytics/ga_sessions/$$timedatetest/%y-%m-%d.csv",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "tgtObjectAttributes" : {
+        "parent" : "engineering/safelite/NA/googleAnalytics/ga_sessions/$$timedatetest"
+      },
+      "targetSchemaMode" : "DONT_APPLY_CHANGES",
+      "dataFormat" : {
+        "formatId" : "Flat",
+        "dataFormatAttributes" : {
+          "escapeChar" : "\\",
+          "importColumnFromFirstLine" : "true",
+          "headerLineNumber" : "1",
+          "maxRowsToPreview" : "0",
+          "qualifierMode" : "MINIMAL",
+          "firstDataRow" : "2",
+          "generateHeader" : "true",
+          "delimiter" : ",",
+          "qualifier" : "\"",
+          "targetHeader" : "With Header",
+          "escapeCharacterDataRetained" : "false",
+          "codePage" : "UTF-8",
+          "fixedWidthMode" : "false"
+        }
+      },
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1748605714000,
+  "mappingId" : "@9eA7WWLq6WPf4tcsNau16E",
+  "mappingTemplateName" : "M_ga_to_S3_load",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Allow Temporary Sequence for Pushdown",
+      "value" : "NO"
+    },
+    {
+      "name" : "Allow Temporary View for Pushdown",
+      "value" : "NO"
+    },
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "None"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Run Only In Pushdown Mode",
+      "value" : "NO"
+    }
+  ],
+  "inOutParameters" : [
+    {
+      "name" : "today_date",
+      "initialValue" : "1996/01/03",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "1996/01/03"
+    },
+    {
+      "name" : "timedatetest",
+      "initialValue" : "19711212",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "20230426"
+    },
+    {
+      "name" : "filename",
+      "initialValue" : "1997-04-10",
+      "datatype" : "STRING",
+      "precision" : "100",
+      "scale" : "0",
+      "retentionPolicy" : "ON_SUCCESS_OR_WARNING",
+      "aggregationType" : "MAX",
+      "currentValue" : "2023-04-26"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-05-30 04:50:43 PDT"
+}
