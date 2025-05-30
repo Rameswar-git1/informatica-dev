@@ -39,17 +39,23 @@ for x in r_filtered:
     PARAMS = f"?runId={test_json['runId']}&taskId={test_json['taskId']}"
 
     STATE = 0
+    MAX_RETRIES = 5
+    retries = 0
 
-    while STATE == 0:
-        time.sleep(60)
+    while STATE == 0 and retries < MAX_RETRIES:
+        time.sleep(200)
         a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers=HEADERS_V2)
         activity_log = a.json()
 
         if isinstance(activity_log, list) and len(activity_log) > 0 and 'state' in activity_log[0]:
             STATE = activity_log[0]['state']
         else:
-            print("Unexpected response format or missing 'state' key:", activity_log)
-            sys.exit(99)
+            print(f"Attempt {retries + 1}: Activity log not ready or missing 'state'. Retrying...")
+            retries += 1
+
+    if retries == MAX_RETRIES:
+        print("Activity log not available after multiple attempts.")
+        sys.exit(99)
 
     if STATE != 1:
         print("Mapping task: " + activity_log[0]['objectName'] + " failed.")
