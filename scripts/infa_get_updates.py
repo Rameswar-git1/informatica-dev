@@ -44,7 +44,7 @@ for x in r_filtered:
         a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers=HEADERS_V2)
         activity_log = a.json()
 
-        if activity_log and 'state' in activity_log[0]:
+        if isinstance(activity_log, list) and len(activity_log) > 0 and 'state' in activity_log[0]:
             STATE = activity_log[0]['state']
         else:
             print("Unexpected response format or missing 'state' key:", activity_log)
