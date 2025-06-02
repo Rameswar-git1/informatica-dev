@@ -75,8 +75,8 @@ jobs:
       - name: Fetch Git LFS objects for UAT branch
         run: |
           cd ./informatica_qa
-          git lfs fetch origin UAT # Explicitly fetch LFS objects for the UAT branch
-          git lfs checkout # Checkout the fetched LFS objects
+          git lfs pull # Changed from git lfs fetch origin UAT to git lfs pull
+          git lfs checkout # Checkout the fetched LFS objects (optional, but good for safety)
         env:
           # Ensure the token is available for LFS operations
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
