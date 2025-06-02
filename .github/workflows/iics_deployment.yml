@@ -77,6 +77,17 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           path: informatica_qa
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install project modules
+        run: npm install
+
+      - name: Build and release content
+        run: npm run build
+
       - uses: actions/checkout@v3
         with:
           path: iics-promotion-pipeline
