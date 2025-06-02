@@ -85,6 +85,16 @@ jobs:
           cd ./informatica_qa
           git log --oneline --graph -n 10
 
+      # NEW STEP: Debug the contents of the checked-out repository
+      - name: Debug package.json location
+        run: |
+          echo "Listing contents of informatica_qa directory:"
+          ls -la ./informatica_qa
+          echo "Listing contents of informatica_qa/src directory (example):"
+          ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
+          echo "Listing contents of informatica_qa/frontend directory (example):"
+          ls -la ./informatica_qa/frontend || true # Use || true to prevent job failure if 'frontend' doesn't exist
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -92,15 +102,15 @@ jobs:
 
       - name: Install project modules
         run: npm install
-        # IMPORTANT: Adjust 'working-directory' if your package.json is not in the root of 'informatica_qa'
-        # Example: working-directory: ./informatica_qa/frontend
-        working-directory: ./informatica_qa
+        # IMPORTANT: Adjust 'working-directory' based on the 'Debug package.json location' output.
+        # If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- YOU LIKELY NEED TO CHANGE THIS
 
       - name: Build and release content
         run: npm run build
-        # IMPORTANT: Adjust 'working-directory' if your package.json is not in the root of 'informatica_qa'
-        # Example: working-directory: ./informatica_qa/frontend
-        working-directory: ./informatica_qa
+        # IMPORTANT: Adjust 'working-directory' based on the 'Debug package.json location' output.
+        # If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- YOU LIKELY NEED TO CHANGE THIS
 
       - name: Checkout promotion pipeline
         uses: actions/checkout@v4
