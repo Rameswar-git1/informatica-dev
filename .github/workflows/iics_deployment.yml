@@ -65,12 +65,21 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Rameswar-git1/informatica_qa
-          ref: UAT # <--- CHANGE THIS LINE: Removed 'refs/heads/'
+          ref: UAT
           token: ${{ secrets.GH_TOKEN }}
           path: informatica_qa
           fetch-depth: 0
-          lfs: true
+          # Removed lfs: true here to handle LFS fetching explicitly
           persist-credentials: true
+
+      - name: Fetch Git LFS objects for UAT branch
+        run: |
+          cd ./informatica_qa
+          git lfs fetch origin UAT # Explicitly fetch LFS objects for the UAT branch
+          git lfs checkout # Checkout the fetched LFS objects
+        env:
+          # Ensure the token is available for LFS operations
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Debug available commits
         run: |
