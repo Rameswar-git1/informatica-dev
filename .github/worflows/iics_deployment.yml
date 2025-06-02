@@ -54,6 +54,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step to ensure Git LFS is installed before checkout
+      - name: Install Git LFS
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git-lfs
+          git lfs install
+
       - name: Checkout UAT branch
         uses: actions/checkout@v4
         with:
@@ -63,7 +70,7 @@ jobs:
           path: informatica_qa
           fetch-depth: 0
           lfs: true
-          persist-credentials: false
+          persist-credentials: true # Changed to true to allow subsequent git operations
 
       - name: Debug available commits
         run: |
