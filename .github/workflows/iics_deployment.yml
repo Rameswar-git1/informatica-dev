@@ -95,6 +95,12 @@ jobs:
           ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
           echo "Listing contents of informatica_qa/frontend directory (example):"
           ls -la ./informatica_qa/frontend || true # Use || true to prevent job failure if 'frontend' doesn't exist
+          echo "Listing contents of informatica_qa/web directory (example):"
+          ls -la ./informatica_qa/web || true # Added for common web project structures
+          echo "Listing contents of informatica_qa/app directory (example):"
+          ls -la ./informatica_qa/app || true # Added for common app project structures
+          echo "Listing contents of informatica_qa/client directory (example):"
+          ls -la ./informatica_qa/client || true # Added for common client project structures
           # Add more 'ls -la' commands for other potential subdirectories if you suspect it's deeper
 
       - name: Set up Node.js
