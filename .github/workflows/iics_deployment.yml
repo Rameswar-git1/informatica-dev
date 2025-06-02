@@ -86,6 +86,7 @@ jobs:
           git log --oneline --graph -n 10
 
       # NEW STEP: Debug the contents of the checked-out repository
+      # *** YOU NEED TO CHECK THE OUTPUT OF THIS STEP IN YOUR GITHUB ACTIONS LOGS ***
       - name: Debug package.json location
         run: |
           echo "Listing contents of informatica_qa directory:"
@@ -94,6 +95,7 @@ jobs:
           ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
           echo "Listing contents of informatica_qa/frontend directory (example):"
           ls -la ./informatica_qa/frontend || true # Use || true to prevent job failure if 'frontend' doesn't exist
+          # Add more 'ls -la' commands for other potential subdirectories if you suspect it's deeper
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -102,15 +104,15 @@ jobs:
 
       - name: Install project modules
         run: npm install
-        # IMPORTANT: Adjust 'working-directory' based on the 'Debug package.json location' output.
-        # If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
-        working-directory: ./informatica_qa # <--- YOU LIKELY NEED TO CHANGE THIS
+        # IMPORTANT: ADJUST THIS 'working-directory' BASED ON THE 'Debug package.json location' OUTPUT!
+        # Example: If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- THIS IS THE LINE YOU LIKELY NEED TO CHANGE
 
       - name: Build and release content
         run: npm run build
-        # IMPORTANT: Adjust 'working-directory' based on the 'Debug package.json location' output.
-        # If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
-        working-directory: ./informatica_qa # <--- YOU LIKELY NEED TO CHANGE THIS
+        # IMPORTANT: ADJUST THIS 'working-directory' BASED ON THE 'Debug package.json location' OUTPUT!
+        # Example: If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- THIS IS THE LINE YOU LIKELY NEED TO CHANGE
 
       - name: Checkout promotion pipeline
         uses: actions/checkout@v4
