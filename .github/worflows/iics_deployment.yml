@@ -65,26 +65,37 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Rameswar-git1/informatica_qa
-          ref: UAT
+          ref: main # Ensure this matches your actual branch name (e.g., 'UAT', 'main', 'development')
           token: ${{ secrets.GH_TOKEN }}
           path: informatica_qa
           fetch-depth: 0
-          # Removed lfs: true here to handle LFS fetching explicitly
+          # 'lfs: true' is removed here to handle LFS fetching explicitly below
           persist-credentials: true
 
       - name: Fetch Git LFS objects for UAT branch
         run: |
           cd ./informatica_qa
-          git lfs pull # Changed from git lfs fetch origin UAT to git lfs pull
-          git lfs checkout # Checkout the fetched LFS objects (optional, but good for safety)
+          git lfs pull # Pulls LFS objects for the currently checked-out branch
+          git lfs checkout # Materializes the LFS objects in the working directory
         env:
-          # Ensure the token is available for LFS operations
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # Ensure the token is available for LFS operations
 
       - name: Debug available commits
         run: |
           cd ./informatica_qa
           git log --oneline --graph -n 10
+
+      # NEW STEP: Debug the contents of the checked-out repository
+      # *** YOU NEED TO CHECK THE OUTPUT OF THIS STEP IN YOUR GITHUB ACTIONS LOGS ***
+      - name: Debug package.json location
+        run: |
+          echo "Listing contents of informatica_qa directory:"
+          ls -la ./informatica_qa
+          echo "Listing contents of informatica_qa/src directory (example):"
+          ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
+          echo "Listing contents of informatica_qa/frontend directory (example):"
+          ls -la ./informatica_qa/frontend || true # Use || true to prevent job failure if 'frontend' doesn't exist
+          # Add more 'ls -la' commands for other potential subdirectories if you suspect it's deeper
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -93,11 +104,15 @@ jobs:
 
       - name: Install project modules
         run: npm install
-        working-directory: ./informatica_qa
+        # IMPORTANT: ADJUST THIS 'working-directory' BASED ON THE 'Debug package.json location' OUTPUT!
+        # Example: If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- THIS IS THE LINE YOU LIKELY NEED TO CHANGE
 
       - name: Build and release content
         run: npm run build
-        working-directory: ./informatica_qa
+        # IMPORTANT: ADJUST THIS 'working-directory' BASED ON THE 'Debug package.json location' OUTPUT!
+        # Example: If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
+        working-directory: ./informatica_qa # <--- THIS IS THE LINE YOU LIKELY NEED TO CHANGE
 
       - name: Checkout promotion pipeline
         uses: actions/checkout@v4
