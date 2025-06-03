@@ -1,3 +1,4 @@
+
 # This sample source code is offered only as an example of what can or might be built using the IICS Github APIs,
 # and is provided for educational purposes only. This source code is provided "as-is"
 # and without representations or warrantees of any kind, is not supported by Informatica.
@@ -124,7 +125,7 @@ for x in r_filtered:
         print(f"ERROR: 'runId' not found in test start response for {object_name}. Response: {test_json}")
         sys.exit(99)
 
-    PARAMS = f"?runId={run_id}"
+    PARAMS = f"?taskId={task_id}&runId={run_id}"  # <-- PATCHED LINE
 
     STATE = 0
     test_retry_count = 0
@@ -133,6 +134,7 @@ for x in r_filtered:
     while STATE == 0 and test_retry_count < MAX_TEST_RETRIES:
         time.sleep(60)
         print(f"Checking activity log for runId: {run_id} (Task: {object_name})...")
+        print(f"DEBUG: Fetching activity log from: {URL + '/api/v2/activity/activityLog' + PARAMS}")  # <-- NEW DEBUG LINE
         a = requests.get(URL + "/api/v2/activity/activityLog" + PARAMS, headers = HEADERS_V2)
 
         if a.status_code != 200:
