@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test",
-        "contentType" : null,
+        "description" : "test_123",
+        "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-06-03T14:47:57.451Z",
+  "updateTime" : "2025-06-03T15:33:30.677Z",
   "objectRefs" : [ {
     "id" : "8Kcx5XaO6MMiTw1tdzR1sJ",
     "name" : "Google BigQuery_V2",
@@ -96,10 +96,7 @@
       "repoInfo" : {
         "repoHandle" : "0192P8170000000001GY"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : null,

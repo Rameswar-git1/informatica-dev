@@ -1,6 +1,6 @@
 {
   "name" : "MT_ga_to_S3_load",
-  "description" : "test",
+  "description" : "test_123",
   "runtimeEnvironmentId" : "@6lZC8XeBjgDcWK9xMBrOsY",
   "runtimeEnvironmentName" : "ip-10-112-68-220.aws.safelite.net",
   "maxLogs" : 10,
@@ -39,6 +39,7 @@
       "useExactSrcNames" : false,
       "userUpdated" : true,
       "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
       "runtimeParameterData" : {
         "connectionRuntimeParameter" : false,
         "objectRuntimeParameter" : false
@@ -86,6 +87,7 @@
       "useExactSrcNames" : false,
       "userUpdated" : true,
       "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
       "tgtObjectAttributes" : {
         "parent" : "engineering/safelite/NA/googleAnalytics/ga_sessions/$$timedatetest"
       },
@@ -117,6 +119,7 @@
     }
   ],
   "verbose" : false,
+  "lastRunTime" : 1748962714000,
   "mappingId" : "@0PUa3K4aQE4dUOfR76iuWH",
   "mappingTemplateName" : "M_ga_to_S3_load",
   "sessionPropertiesList" : [
@@ -185,5 +188,5 @@
   "optimizationPlan" : "NONE",
   "allowMaxFieldLength" : false,
   "midstreamPreview" : false,
-  "vcsExportTime" : "2025-06-03 07:47:57 PDT"
+  "vcsExportTime" : "2025-06-03 08:33:30 PDT"
 }
