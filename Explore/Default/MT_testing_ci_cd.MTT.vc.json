@@ -127,6 +127,7 @@
     }
   ],
   "verbose" : false,
+  "lastRunTime" : 1748605260000,
   "mappingId" : "@9HWhNJbfhasfrbsNIGWV4Q",
   "mappingTemplateName" : "Mapping_checkout",
   "sessionPropertiesList" : [
@@ -154,5 +155,5 @@
   "optimizationPlan" : "NONE",
   "allowMaxFieldLength" : false,
   "midstreamPreview" : false,
-  "vcsExportTime" : "2025-05-30 01:22:19 PDT"
+  "vcsExportTime" : "2025-06-03 06:39:11 PDT"
 }
