@@ -109,7 +109,7 @@ jobs:
           node-version: '18'
 
       - name: Install project modules
-        run: npm install
+        run: npm install --verbose
         # IMPORTANT: ADJUST THIS 'working-directory' BASED ON THE 'Debug package.json location' OUTPUT!
         # Example: If package.json is in 'informatica_qa/my-app', change this to: ./informatica_qa/my-app
         working-directory: ./informatica_qa # <--- THIS IS THE LINE YOU LIKELY NEED TO CHANGE
