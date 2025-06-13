@@ -9,11 +9,9 @@ import os
 # arising from any such use to the fullest extent permitted by law.
 
 URL = os.environ['IICS_LOGIN_URL']
-USERNAME = 'rameswara.reddy.dev'   #os.environ['IICS_USERNAME']
-PASSWORD = 'Harchana12#'   #os.environ['IICS_PASSWORD']
 
-UAT_USERNAME = 'us.qa.admin'  #os.environ['UAT_IICS_USERNAME']
-UAT_PASSWORD = 'Belron@0525'  #os.environ['UAT_IICS_PASSWORD']
+
+
 
 #USERNAME = os.environ.get('IICS_USERNAME')
 #PASSWORD = os.environ.get('IICS_PASSWORD')
