@@ -13,11 +13,11 @@ URL = os.environ['IICS_LOGIN_URL']
 
 
 
-#USERNAME = os.environ.get('IICS_USERNAME')
-#PASSWORD = os.environ.get('IICS_PASSWORD')
+USERNAME = os.environ.get('IICS_USERNAME')
+PASSWORD = os.environ.get('IICS_PASSWORD')
 
-#UAT_USERNAME = os.environ.get('UAT_IICS_USERNAME')
-#UAT_PASSWORD = os.environ.get('UAT_IICS_PASSWORD')
+UAT_USERNAME = os.environ.get('UAT_IICS_USERNAME')
+UAT_PASSWORD = os.environ.get('UAT_IICS_PASSWORD')
 
 URL = "https://dm-us.informaticacloud.com/saas/public/core/v3/login"
 BODY = {"username": USERNAME,"password": PASSWORD}
