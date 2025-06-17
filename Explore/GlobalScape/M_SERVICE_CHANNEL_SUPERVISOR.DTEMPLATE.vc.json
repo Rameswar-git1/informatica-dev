@@ -1,0 +1,409 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "M_SERVICE_CHANNEL_SUPERVISOR",
+    "links" : [
+      {
+        "link" : "src_SERVICE_CHANNEL_SUPERVISOR -> tgt_SERVICE_CHANNEL_SUPERVISOR"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2023-06-09T06:50:44.374Z",
+        "name" : "src_SERVICE_CHANNEL_SUPERVISOR",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "SUBSCRIBERID"
+            },
+            "name" : "SUBSCRIBERID",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 38,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LOCATION"
+            },
+            "name" : "LOCATION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 16777216,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DISTRICT"
+            },
+            "name" : "DISTRICT",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 16777216,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "REGION"
+            },
+            "name" : "REGION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 16777216,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EMPLOYEE"
+            },
+            "name" : "EMPLOYEE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SUPERVISOR"
+            },
+            "name" : "SUPERVISOR",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 72,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "RANK"
+            },
+            "name" : "RANK",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@9rwe2o3YpkfhGpL3m07mwD",
+          "connectionName" : "SNOWFLAKE_NONPROD_SF_GL_REPORTING_DB",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "TOOLKIT",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "SAFELITE_HERITAGE_DB/SAFELITE_ANALYTICS_SCMA/SERVICE_CHANNEL_SUPERVISOR",
+            "label" : "SERVICE_CHANNEL_SUPERVISOR",
+            "objectName" : "SERVICE_CHANNEL_SUPERVISOR",
+            "objectType" : "table",
+            "path" : "SAFELITE_HERITAGE_DB/SAFELITE_ANALYTICS_SCMA/SERVICE_CHANNEL_SUPERVISOR",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "SUBSCRIBERID",
+                "fieldType" : "CONNECTOR",
+                "label" : "SUBSCRIBERID",
+                "nativeName" : "SUBSCRIBERID",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 38,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "LOCATION",
+                "fieldType" : "CONNECTOR",
+                "label" : "LOCATION",
+                "nativeName" : "LOCATION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 16777216,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "DISTRICT",
+                "fieldType" : "CONNECTOR",
+                "label" : "DISTRICT",
+                "nativeName" : "DISTRICT",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 16777216,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "REGION",
+                "fieldType" : "CONNECTOR",
+                "label" : "REGION",
+                "nativeName" : "REGION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 16777216,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "EMPLOYEE",
+                "fieldType" : "CONNECTOR",
+                "label" : "EMPLOYEE",
+                "nativeName" : "EMPLOYEE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "SUPERVISOR",
+                "fieldType" : "CONNECTOR",
+                "label" : "SUPERVISOR",
+                "nativeName" : "SUPERVISOR",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 72,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              },
+              {
+                "name" : "RANK",
+                "fieldType" : "CONNECTOR",
+                "label" : "RANK",
+                "nativeName" : "RANK",
+                "nativeType" : "number",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "metaExtensions" : [
+                  {
+                    "name" : "isNullable",
+                    "value" : "true"
+                  }
+                ],
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "SERVICE_CHANNEL_SUPERVISOR"
+                  }
+                ]
+              }
+            ],
+            "objectAttributes" : [
+              {
+                "name" : "tableType",
+                "value" : "TABLE"
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2023-06-09T06:50:44.379Z",
+        "name" : "tgt_SERVICE_CHANNEL_SUPERVISOR",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@1bdCp3qdxqNl3CtBC53mk6",
+          "connectionName" : "IICS_SA_DATA",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "true",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+            "label" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+            "path" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-16 19:38:55 PDT"
+}

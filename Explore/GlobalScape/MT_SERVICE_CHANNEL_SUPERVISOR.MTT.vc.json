@@ -1,0 +1,161 @@
+{
+  "name" : "MT_SERVICE_CHANNEL_SUPERVISOR",
+  "description" : "test",
+  "runtimeEnvironmentId" : "@6lZC8XeBjgDcWK9xMBrOsY",
+  "runtimeEnvironmentName" : "ip-10-112-68-220.aws.safelite.net",
+  "maxLogs" : 10,
+  "parameters" : [
+    {
+      "name" : "$src_SERVICE_CHANNEL_SUPERVISOR$",
+      "type" : "EXTENDED_SOURCE",
+      "label" : "src_SERVICE_CHANNEL_SUPERVISOR",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "isSelectDistinct" : "false",
+        "isMsrcFilterParameterized" : "false",
+        "isMsrcSortParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "originalPath" : "src_SERVICE_CHANNEL_SUPERVISOR"
+      },
+      "sourceConnectionId" : "@9rwe2o3YpkfhGpL3m07mwD",
+      "connectionName" : "SNOWFLAKE_NONPROD_SF_GL_REPORTING_DB",
+      "newFlatFile" : false,
+      "newObject" : false,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "object" : {
+          "name" : "SAFELITE_HERITAGE_DB/SAFELITE_ANALYTICS_SCMA/SERVICE_CHANNEL_SUPERVISOR",
+          "label" : "SERVICE_CHANNEL_SUPERVISOR",
+          "metadataUpdated" : false
+        },
+        "singleMode" : true,
+        "objects" : [
+          {
+            "name" : "SAFELITE_HERITAGE_DB/SAFELITE_ANALYTICS_SCMA/SERVICE_CHANNEL_SUPERVISOR",
+            "label" : "SERVICE_CHANNEL_SUPERVISOR",
+            "metadataUpdated" : false
+          }
+        ]
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    },
+    {
+      "name" : "$tgt_SERVICE_CHANNEL_SUPERVISOR$",
+      "type" : "TARGET",
+      "label" : "tgt_SERVICE_CHANNEL_SUPERVISOR",
+      "uiProperties" : {
+        "connectionParameterized" : "false",
+        "objectParameterized" : "false",
+        "visible" : "false",
+        "supportApplyDDLChanges" : "true",
+        "originalPath" : "tgt_SERVICE_CHANNEL_SUPERVISOR"
+      },
+      "targetConnectionId" : "@1bdCp3qdxqNl3CtBC53mk6",
+      "connectionName" : "IICS_SA_DATA",
+      "targetObject" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+      "targetObjectLabel" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+      "newFlatFile" : false,
+      "newObject" : true,
+      "showBusinessNames" : false,
+      "naturalOrder" : true,
+      "newObjectName" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "tgtFFAttrs" : {
+        "delimiter" : ",",
+        "textQualifier" : "\"",
+        "headerLineNo" : 1,
+        "rowDelimiter" : 0,
+        "consecutiveDelimiter" : false,
+        "multiDelimitersAsAnd" : true
+      },
+      "customFuncCfg" : { },
+      "extendedObject" : {
+        "singleMode" : true
+      },
+      "commandType" : 0,
+      "handleSpecialChars" : false,
+      "handleDecimalRoundOff" : false,
+      "frsAsset" : false,
+      "dynamicFileName" : false,
+      "excludeDynamicFileNameField" : false,
+      "currentlyProcessedFileName" : false,
+      "retainFieldMetadata" : false,
+      "objectName" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+      "objectLabel" : "'SERVICE_CHANNEL_SUPERVISOR_'||to_char(SYSDATE,'YYYYMMDD')||'.csv'",
+      "useExactSrcNames" : false,
+      "userUpdated" : true,
+      "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
+      "targetSchemaMode" : "DONT_APPLY_CHANGES",
+      "runtimeParameterData" : {
+        "connectionRuntimeParameter" : false,
+        "objectRuntimeParameter" : false
+      },
+      "restmodernSource" : true,
+      "fileList" : false
+    }
+  ],
+  "verbose" : false,
+  "lastRunTime" : 1687873876000,
+  "mappingId" : "@0rNEoxDoGc7d9bOkcZJCY1",
+  "mappingTemplateName" : "M_SERVICE_CHANNEL_SUPERVISOR",
+  "sessionPropertiesList" : [
+    {
+      "name" : "Allow Temporary Sequence for Pushdown",
+      "value" : "NO"
+    },
+    {
+      "name" : "Allow Temporary View for Pushdown",
+      "value" : "YES"
+    },
+    {
+      "name" : "Pushdown Optimization",
+      "value" : "Full"
+    },
+    {
+      "name" : "Pushdown Optimization Context",
+      "value" : "None"
+    },
+    {
+      "name" : "Run Only In Pushdown Mode",
+      "value" : "NO"
+    }
+  ],
+  "hidden" : false,
+  "enableCrossSchemaPushdown" : true,
+  "enableParallelRun" : false,
+  "autoTunedApplied" : false,
+  "autoTunedAppliedType" : "NONE",
+  "paramFileType" : "PARAM_FILE_LOCAL",
+  "schemaMode" : "async",
+  "valid" : true,
+  "parameterFileEncoding" : "UTF-8",
+  "optimizationPlan" : "NONE",
+  "allowMaxFieldLength" : false,
+  "midstreamPreview" : false,
+  "vcsExportTime" : "2025-06-16 19:38:55 PDT"
+}
