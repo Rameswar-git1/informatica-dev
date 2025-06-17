@@ -74,7 +74,7 @@ jobs:
 
       - name: Fetch Git LFS objects for UAT branch
         run: |
-          cd ./informatica_qa
+          cd ./informatica-dev
           git lfs pull # Pulls LFS objects for the currently checked-out branch
           git lfs checkout # Materializes the LFS objects in the working directory
         env:
@@ -82,14 +82,14 @@ jobs:
 
       - name: Debug available commits
         run: |
-          cd ./informatica_qa
+          cd ./informatica-dev
           git log --oneline --graph -n 10
 
       # NEW STEP: Debug the contents of the checked-out repository
       # *** YOU NEED TO CHECK THE OUTPUT OF THIS STEP IN YOUR GITHUB ACTIONS LOGS ***
       - name: Debug package.json location
         run: |
-          echo "Listing contents of informatica_qa directory:"
+          echo "Listing contents of informatica-dev directory:"
           ls -la ./informatica_qa
           echo "Listing contents of informatica_qa/src directory (example):"
           ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
@@ -131,7 +131,7 @@ jobs:
 
       - name: Cherry-pick and push commit
         run: |
-          cd ./informatica_qa
+          cd ./informatica-dev
           git fetch --all
           git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || echo "Cherry-pick failed or no changes"
           git push
@@ -143,7 +143,7 @@ jobs:
           echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
 
       - name: Login to UAT
-        run: python ./iics-promotion-pipeline/scripts/infa_login.py
+        run: python ./informatica-dev/scripts/infa_login.py
 
       - name: Sync and test UAT deployment
-        run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
+        run: python ./informtica-dev/scripts/infa_update_and_test.py
