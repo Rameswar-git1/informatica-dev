@@ -1,43 +1,42 @@
-name: DEPLOY_MAPPING_TASK
+name: Promote Dev to UAT
 
 on:
   workflow_dispatch:
     inputs:
       committed_sha:
         description: "Hash to deploy"
-        type: string
         required: true
+        type: string
 
 env:
+  COMMIT_HASH: ${{ github.event.inputs.committed_sha }}
   IICS_LOGIN_URL: https://dm-us.informaticacloud.com
-  IICS_POD_URL: https://usw5.dm-us.informaticacloud.com/saas
-
+  IICS_POD_URL: https://na1.dm-us.informaticacloud.com/saas
   IICS_USERNAME: ${{ secrets.IICS_USERNAME }}
   IICS_PASSWORD: ${{ secrets.IICS_PASSWORD }}
   UAT_IICS_USERNAME: ${{ secrets.UAT_IICS_USERNAME }}
   UAT_IICS_PASSWORD: ${{ secrets.UAT_IICS_PASSWORD }}
 
-  COMMIT_HASH: ${{ github.event.inputs.committed_sha }}
-
 jobs:
   dev_build:
     name: Review Development Code
-    environment:
-      name: development
     runs-on: ubuntu-latest
+    environment: development
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code from Dev
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: dev
 
-      - uses: actions/setup-python@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
-      - name: Install python modules
+      - name: Install Python Dependencies
         run: |
-          python -m pip install --upgrade pip
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Login to development
@@ -46,104 +45,54 @@ jobs:
       - name: Test Committed Mapping Tasks
         run: python ./scripts/infa_get_updates.py
 
-  uat_commit:
-    name: Complete UAT Promotion
-    environment:
-      name: uat
-    needs: dev_build
+  promote_to_uat:
+    name: Complete uat promotion
     runs-on: ubuntu-latest
+    environment: uat
+    needs: dev_build
 
     steps:
-      # Step to ensure Git LFS is installed before checkout
-      - name: Install Git LFS
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y git-lfs
-          git lfs install
-
-      - name: Checkout UAT branch
-        uses: actions/checkout@v4
+      - name: Checkout UAT Branch
+        uses: actions/checkout@v3
         with:
-          repository: Rameswar-git1/informatica_qa
-          ref: main # Ensure this matches your actual branch name (e.g., 'UAT', 'main', 'development')
+          ref: UAT
           token: ${{ secrets.GH_TOKEN }}
-          path: informatica_qa
-          fetch-depth: 0
-          # 'lfs: true' is removed here to handle LFS fetching explicitly below
-          persist-credentials: true
+          path: IICS-CDP-CICD-demo
 
-      - name: Fetch Git LFS objects for UAT branch
-        run: |
-          cd ./informatica-dev
-          git lfs pull # Pulls LFS objects for the currently checked-out branch
-          git lfs checkout # Materializes the LFS objects in the working directory
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # Ensure the token is available for LFS operations
-
-      - name: Debug available commits
-        run: |
-          cd ./informatica-dev
-          git log --oneline --graph -n 10
-
-      # NEW STEP: Debug the contents of the checked-out repository
-      # *** YOU NEED TO CHECK THE OUTPUT OF THIS STEP IN YOUR GITHUB ACTIONS LOGS ***
-      - name: Debug package.json location
-        run: |
-          echo "Listing contents of informatica-dev directory:"
-          ls -la ./informatica_qa
-          echo "Listing contents of informatica_qa/src directory (example):"
-          ls -la ./informatica_qa/src || true # Use || true to prevent job failure if 'src' doesn't exist
-          echo "Listing contents of informatica_qa/frontend directory (example):"
-          ls -la ./informatica_qa/frontend || true # Use || true to prevent job failure if 'frontend' doesn't exist
-          echo "Listing contents of informatica_qa/web directory (example):"
-          ls -la ./informatica_qa/web || true # Added for common web project structures
-          echo "Listing contents of informatica_qa/app directory (example):"
-          ls -la ./informatica_qa/app || true # Added for common app project structures
-          echo "Listing contents of informatica_qa/client directory (example):"
-          ls -la ./informatica_qa/client || true # Added for common client project structures
-          # Add more 'ls -la' commands for other potential subdirectories if you suspect it's deeper
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-
-      - name: Checkout promotion pipeline
-        uses: actions/checkout@v4
+      - name: Checkout Promotion Pipeline Scripts
+        uses: actions/checkout@v3
         with:
           path: iics-promotion-pipeline
-          fetch-depth: 0
 
-      - uses: actions/setup-python@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
-      - name: Install python modules
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests
+      - name: Install Python Requirements
+        run: pip install requests
 
-      - name: Set default Git user
+      - name: Set Git User Identity
         run: |
-          git config --global user.email "Rameswara.Reddy@safelite.com"
-          git config --global user.name "Rameswar-git1"
+          git config --global user.name "Brandon Bird"
+          git config --global user.email "bbird@informatica.com"
 
-      - name: Cherry-pick and push commit
+      - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
-          cd ./informatica-dev
-          git fetch --all
-          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || echo "Cherry-pick failed or no changes"
-          git push
+          cd IICS-CDP-CICD-demo
+          git fetch origin
+          git checkout UAT
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
+          git push origin HEAD:UAT
 
-      - name: Get latest UAT commit hash
+      - name: Get Latest Changes to UAT
         run: |
-          cd ./informatica_qa
-          git pull
+          cd IICS-CDP-CICD-demo
           echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
 
       - name: Login to UAT
-        run: python ./informatica-dev/scripts/infa_login.py
+        run: python ./iics-promotion-pipeline/scripts/infa_login.py
 
       - name: Sync and test UAT deployment
-        run: python ./informtica-dev/scripts/infa_update_and_test.py
+        run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
