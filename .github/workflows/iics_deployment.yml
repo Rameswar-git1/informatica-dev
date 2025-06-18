@@ -27,7 +27,7 @@ jobs:
       - name: Checkout Code from Dev
         uses: actions/checkout@v3
         with:
-          ref: dev
+          ref: informatica-dev
 
       - name: Set up Python
         uses: actions/setup-python@v3
@@ -55,7 +55,7 @@ jobs:
       - name: Checkout UAT Branch
         uses: actions/checkout@v3
         with:
-          ref: UAT
+          ref: informatica_qa
           token: ${{ secrets.GH_TOKEN }}
           path: IICS-CDP-CICD-demo
 
