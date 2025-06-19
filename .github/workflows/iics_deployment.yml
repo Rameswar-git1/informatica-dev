@@ -75,6 +75,8 @@ jobs:
         run: |
           git config --global user.name "Brandon Bir"
           git config --global user.email "bbird@informatica.com"
+          cd IICS-CDP-CICD-demo
+          gh repo set-default Rameswar-git1/informatica-dev          
       - name: Set GitHub token for authentication
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -82,8 +84,7 @@ jobs:
           git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}          
       - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
-          cd IICS-CDP-CICD-demo
-          gh repo set-default Rameswar-git1/informatica-dev
+
           git fetch origin
           if git ls-remote --exit-code --heads origin qa; then
             git branch -r
