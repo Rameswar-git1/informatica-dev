@@ -94,7 +94,7 @@ jobs:
           if git ls-remote --exit-code --heads origin qa; then
             git checkout qa
           else
-            git checkout -b qa origin/main
+            git checkout -b qa main
             git push origin qa
           fi
           git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
