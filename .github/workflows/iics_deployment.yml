@@ -89,38 +89,46 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cd IICS-CDP-CICD-demo
+          if [ -d "IICS-CDP-CICD-demo/.git" ]; then
+            cd IICS-CDP-CICD-demo
+            git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica_qa.git
+          else
+            echo "❌ Directory IICS-CDP-CICD-demo is not a Git repository"
+            exit 1
+          fi
+
           # Explicitly set the remote to the UAT repository
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica_qa.git
+          # git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica_qa.git
 
       - name: Add Dev Remote and Cherry-pick Commit
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cd IICS-CDP-CICD-demo
-          # Add the dev repository as a remote to access the commit
-          git remote add dev https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica-dev.git || true
-          # Fetch the full history from the dev remote to get the commit
-          git fetch dev main --unshallow || git fetch dev main
-          
-          # Check that the commit exists in the dev remote
-          if git cat-file -e dev/${COMMIT_HASH} 2>/dev/null; then
-            echo "Found commit ${COMMIT_HASH} in dev remote."
+         if [ -d "IICS-CDP-CICD-demo/.git" ]; then
+            cd IICS-CDP-CICD-demo
+            git remote add dev https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica-dev.git || true
+            git fetch dev main --unshallow || git fetch dev main
+      
+            if git cat-file -e dev/${COMMIT_HASH} 2>/dev/null; then
+              echo "✅ Found commit ${COMMIT_HASH} in dev remote."
+            else
+              echo "❌ Commit ${COMMIT_HASH} not found in dev remote." && exit 1
+            fi
+      
+            if git ls-remote --exit-code --heads origin qa; then
+              git checkout qa
+            else
+              git checkout -b qa origin/main
+              git push origin qa
+            fi
+      
+            git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
+            git push origin HEAD:qa
           else
-            echo "Commit ${COMMIT_HASH} not found in dev remote." && exit 1
+            echo "❌ Directory IICS-CDP-CICD-demo is not a Git repository"
+            exit 1
           fi
 
-          # Set up (or checkout) the target qa branch in the UAT repo
-          if git ls-remote --exit-code --heads origin qa; then
-            git checkout qa
-          else
-            git checkout -b qa origin/main
-            git push origin qa
-          fi
-
-          # Cherry-pick the commit from the dev remote into the qa branch
-          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
-          git push origin HEAD:qa
 
       - name: Get Latest Changes to UAT
         run: |
