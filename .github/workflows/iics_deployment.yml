@@ -78,10 +78,11 @@ jobs:
       - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
           cd IICS-CDP-CICD-demo
+          gh repo set-default Rameswar-git1/informatica-dev
           git fetch origin
           if git ls-remote --exit-code --heads origin qa; then
             git branch -r
-            git checkout -b origin/main
+            git checkout -b main
           else
             git checkout -b qa main
             git push origin qa
