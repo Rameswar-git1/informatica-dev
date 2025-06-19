@@ -38,7 +38,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: Login to development
         run: python ./scripts/infa_login.py
 
@@ -74,23 +73,25 @@ jobs:
 
       - name: Set Git User Identity
         run: |
-          git config --global user.name "Brandon Bird"
+          git config --global user.name "Brandon Bir"
           git config --global user.email "bbird@informatica.com"
-
       - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
           cd IICS-CDP-CICD-demo
           git fetch origin
-          git checkout origin/informatica-dev
+          if git ls-remote --exit-code --heads origin qa; then
+            git checkout -b qa origin/qa
+          else
+            git checkout -b qa main
+            git push origin qa
+          fi
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
-          git push origin HEAD:informatica_qa
-
+          git push origin HEAD:qa
       - name: Get Latest Changes to UAT
         run: |
           cd IICS-CDP-CICD-demo
           echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
-
       - name: Login to UAT
         run: python ./iics-promotion-pipeline/scripts/infa_login.py
 
