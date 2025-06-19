@@ -63,6 +63,7 @@ jobs:
           ref: main
           token: ${{ secrets.GH_TOKEN }}
           path: IICS-CDP-CICD-demo
+          fetch-depth: 0
 
       - name: Checkout Promotion Pipeline Scripts
         uses: actions/checkout@v3
