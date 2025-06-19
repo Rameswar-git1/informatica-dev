@@ -11,7 +11,7 @@ on:
 env:
   COMMIT_HASH: ${{ github.event.inputs.committed_sha }}
   IICS_LOGIN_URL: https://dm-us.informaticacloud.com
-  IICS_POD_URL: https://na1.dm-us.informaticacloud.com/saas
+  IICS_POD_URL: https://usw5.dm-us.informaticacloud.com/saas
   IICS_USERNAME: ${{ secrets.IICS_USERNAME }}
   IICS_PASSWORD: ${{ secrets.IICS_PASSWORD }}
   UAT_IICS_USERNAME: ${{ secrets.UAT_IICS_USERNAME }}
