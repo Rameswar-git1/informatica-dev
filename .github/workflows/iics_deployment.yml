@@ -81,7 +81,7 @@ jobs:
         run: |
           cd IICS-CDP-CICD-demo
           git fetch origin
-          git checkout informatica_qa
+          git checkout informatica-dev
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
           git push origin HEAD:informatica_qa
