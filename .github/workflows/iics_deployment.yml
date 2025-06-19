@@ -80,7 +80,8 @@ jobs:
           cd IICS-CDP-CICD-demo
           git fetch origin
           if git ls-remote --exit-code --heads origin qa; then
-            git checkout -b qa origin/qa
+            git branch -r
+            git checkout -b informatica-dev origin/informatica-dev
           else
             git checkout -b qa main
             git push origin qa
