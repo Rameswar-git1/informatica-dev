@@ -75,6 +75,11 @@ jobs:
         run: |
           git config --global user.name "Brandon Bir"
           git config --global user.email "bbird@informatica.com"
+      - name: Set GitHub token for authentication
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}          
       - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
           cd IICS-CDP-CICD-demo
@@ -87,8 +92,6 @@ jobs:
             git checkout -b qa main
             git push origin qa
           fi
-          echo "The token value" {{secrets.GH_TOKEN}}
-          git remote set-url origin https://x-access-token:${{secrets.GH_TOKEN}}@github.com/${{ github.repository }}
           git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
           git push origin HEAD:qa
       - name: Get Latest Changes to UAT
