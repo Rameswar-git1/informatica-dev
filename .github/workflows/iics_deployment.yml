@@ -48,7 +48,7 @@ jobs:
   promote_to_uat:
     name: Complete uat promotion
     runs-on: ubuntu-latest
-    environment: uat
+    environment: QA
     needs: dev_build
 
     steps:
