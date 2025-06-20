@@ -1,5 +1,6 @@
 {
   "name" : "MT_testing_ci_cd",
+  "description" : "testing",
   "runtimeEnvironmentId" : "@6lZC8XeBjgDcWK9xMBrOsY",
   "runtimeEnvironmentName" : "ip-10-112-68-220.aws.safelite.net",
   "maxLogs" : 10,
@@ -53,6 +54,7 @@
       "useExactSrcNames" : false,
       "userUpdated" : true,
       "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
       "runtimeParameterData" : {
         "connectionRuntimeParameter" : false,
         "objectRuntimeParameter" : false
@@ -100,6 +102,7 @@
       "useExactSrcNames" : false,
       "userUpdated" : true,
       "unspecified" : false,
+      "fetchMode" : "ORIGINAL",
       "dataFormat" : {
         "formatId" : "Flat",
         "dataFormatAttributes" : {
@@ -127,7 +130,7 @@
     }
   ],
   "verbose" : false,
-  "lastRunTime" : 1748605260000,
+  "lastRunTime" : 1748960540000,
   "mappingId" : "@9HWhNJbfhasfrbsNIGWV4Q",
   "mappingTemplateName" : "Mapping_checkout",
   "sessionPropertiesList" : [
@@ -155,5 +158,5 @@
   "optimizationPlan" : "NONE",
   "allowMaxFieldLength" : false,
   "midstreamPreview" : false,
-  "vcsExportTime" : "2025-06-03 06:39:11 PDT"
+  "vcsExportTime" : "2025-06-20 07:14:07 PDT"
 }
