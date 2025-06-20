@@ -49,8 +49,8 @@ jobs:
             echo "Cherry-pick failed. Attempting to resolve modify/delete conflicts..."
 
             git diff --name-only --diff-filter=U | while read file; do
-              echo "Restoring $file from source commit..."
-              git checkout source/${{ env.COMMIT_HASH }} -- "$file"
+              echo "Restoring $file from commit ${{ env.COMMIT_HASH }}..."
+              git checkout ${{ env.COMMIT_HASH }} -- "$file"
               git add "$file"
             done
 
