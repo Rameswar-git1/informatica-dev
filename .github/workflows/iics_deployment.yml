@@ -1,7 +1,3 @@
-import os
-
-# Define the workflow content
-workflow_content = """
 name: Promote Dev to UAT
 
 on:
@@ -37,11 +33,11 @@ jobs:
 
       - name: Clone Source Repository (Rameswar-git1/informatica-dev)
         run: |
-          git clone --branch main https://x-access-token:${{GH_TOKEN}}@github.com/Rameswar-git1/informatica-dev.git source-repo
+          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica-dev.git source-repo
 
       - name: Clone Target Repository (informatica_qa)
         run: |
-          git clone --branch main https://x-access-token:${{GH_TOKEN}}@github.com/informatica_qa/informatica_qa.git target-repo
+          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/informatica_qa/informatica_qa.git target-repo
 
       - name: Cherry-pick Commit from Source and Push to Target
         run: |
@@ -49,10 +45,10 @@ jobs:
           git remote add source ../source-repo
           git fetch source
 
-          git cherry-pick --strategy=recursive -X theirs ${{COMMIT_HASH}} || {
+          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || {
             if git status | grep -q "both deleted and modified"; then
               echo "Conflict due to deleted vs modified files. Restoring modified versions."
-              git restore --source=source/${{COMMIT_HASH}} .
+              git restore --source=source/${COMMIT_HASH} .
               git add .
               git cherry-pick --continue
             elif git status | grep -q "nothing to commit, working tree clean"; then
@@ -61,7 +57,7 @@ jobs:
             else
               echo "Cherry-pick failed unexpectedly."
               exit 1
-            }
+            fi
           }
 
           git push origin main
@@ -81,14 +77,3 @@ jobs:
 
       - name: Sync and Test UAT Deployment
         run: python ./source-repo/scripts/infa_update_and_test.py
-"""
-
-# Create the directory if it doesn't exist
-os.makedirs('.github/workflows', exist_ok=True)
-
-# Save the workflow content to a file
-with open('.github/workflows/promote-dev-to-uat.yml', 'w') as file:
-    file.write(workflow_content)
-
-print("The GitHub Actions workflow file has been created successfully.")
-
