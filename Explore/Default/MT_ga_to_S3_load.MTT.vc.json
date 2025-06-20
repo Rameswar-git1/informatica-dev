@@ -1,6 +1,6 @@
 {
   "name" : "MT_ga_to_S3_load",
-  "description" : "test_123",
+  "description" : "UAT test",
   "runtimeEnvironmentId" : "@6lZC8XeBjgDcWK9xMBrOsY",
   "runtimeEnvironmentName" : "ip-10-112-68-220.aws.safelite.net",
   "maxLogs" : 10,
@@ -119,7 +119,7 @@
     }
   ],
   "verbose" : false,
-  "lastRunTime" : 1750351213000,
+  "lastRunTime" : 1750426047000,
   "mappingId" : "@0PUa3K4aQE4dUOfR76iuWH",
   "mappingTemplateName" : "M_ga_to_S3_load",
   "sessionPropertiesList" : [
@@ -188,5 +188,5 @@
   "optimizationPlan" : "NONE",
   "allowMaxFieldLength" : false,
   "midstreamPreview" : false,
-  "vcsExportTime" : "2025-06-19 09:46:35 PDT"
+  "vcsExportTime" : "2025-06-20 06:59:22 PDT"
 }
