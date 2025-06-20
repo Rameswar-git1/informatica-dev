@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "test_123",
+        "description" : "UAT test",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-06-19T16:46:35.928Z",
+  "updateTime" : "2025-06-20T13:59:22.493Z",
   "objectRefs" : [ {
     "id" : "8Kcx5XaO6MMiTw1tdzR1sJ",
     "name" : "Google BigQuery_V2",
