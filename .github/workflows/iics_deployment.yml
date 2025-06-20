@@ -37,7 +37,7 @@ jobs:
 
       - name: Clone Target Repository (informatica_qa)
         run: |
-          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/informatica_qa/informatica_qa.git target-repo
+          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica_qa.git target-repo
 
       - name: Cherry-pick Commit from Source and Push to Target
         run: |
