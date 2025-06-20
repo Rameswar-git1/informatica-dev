@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : null,
+        "description" : "testing",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-06-03T13:39:12.115Z",
+  "updateTime" : "2025-06-20T14:14:07.644Z",
   "objectRefs" : [ {
     "id" : "6lZC8XeBjgDcWK9xMBrOsY",
     "name" : "ip-10-112-68-220.aws.safelite.net",
