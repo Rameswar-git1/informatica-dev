@@ -54,10 +54,15 @@ jobs:
               git add "$file"
             done
 
-            git cherry-pick --continue || {
-              echo "Cherry-pick still failed after conflict resolution."
-              exit 1
-            }
+            if git status | grep -q "nothing to commit, working tree clean"; then
+              echo "Cherry-pick resulted in no changes. Skipping."
+              git cherry-pick --skip
+            else
+              git cherry-pick --continue || {
+                echo "Cherry-pick still failed after conflict resolution."
+                exit 1
+              }
+            fi
           }
 
           git push origin main
