@@ -1,4 +1,3 @@
-
 name: Promote Dev to UAT
 
 on:
@@ -19,61 +18,18 @@ env:
   UAT_IICS_PASSWORD: ${{ secrets.UAT_IICS_PASSWORD }}
 
 jobs:
-  promote_to_uat:
-    name: Promote Commit to UAT
+  dev_build:
+    name: Review Development Code
     runs-on: ubuntu-latest
-    environment: QA
+    environment: development
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
-      - name: Set up Git
-        run: |
-          git config --global user.name "Brandon Bir"
-          git config --global user.email "bbird@informatica.com"
-
-      - name: Clone Source Repository
-        run: |
-          git clone --branch main https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Rameswar-git1/informatica-dev.git source-repo
-
-      - name: Clone Target Repository
-        run: |
-          git clone --branch main https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Rameswar-git1/informatica_qa.git target-repo
-
-      - name: Cherry-pick Commit and Handle Conflicts
-        run: |
-          cd target-repo
-          git remote add source ../source-repo
-          git fetch source
-
-          echo "Attempting cherry-pick of commit $COMMIT_HASH..."
-          git cherry-pick --strategy=recursive -X theirs $COMMIT_HASH || {
-            echo "Cherry-pick failed. Attempting to resolve conflicts..."
-
-            git status --porcelain | grep '^UU' | cut -c4- | while read file; do
-              echo "Resolving conflict in $file by using source version..."
-              git checkout $COMMIT_HASH -- "$file"
-              git add "$file"
-            done
-
-            if git diff --cached --quiet; then
-              echo "No changes to commit. Skipping cherry-pick."
-              git cherry-pick --skip
-            else
-              git cherry-pick --continue || {
-                echo "Cherry-pick still failed after conflict resolution."
-                exit 1
-              }
-            fi
-          }
-
-          echo "Pushing changes to target repository..."
-          git push origin main
-
-      - name: Set UAT_COMMIT_HASH Environment Variable
-        run: |
-          cd target-repo
-          echo "UAT_COMMIT_HASH=$(git rev-parse HEAD)" >> $GITHUB_ENV
+      - name: Checkout Code from Dev
+        uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v3
@@ -83,70 +39,76 @@ jobs:
       - name: Install Python Dependencies
         run: |
           pip install --upgrade pip
-          pip install requests
+          pip install -r requirements.txt
 
-      - name: Login to IICS Dev Org
+      - name: Login to development
+        run: python ./scripts/infa_login.py
+
+      - name: Test Committed Mapping Tasks
+        run: python ./scripts/infa_get_updates.py
+
+  promote_to_uat:
+    name: Complete UAT Promotion
+    runs-on: ubuntu-latest
+    environment: QA
+    needs: dev_build
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout UAT Branch
+        uses: actions/checkout@v3
+        with:
+          repository: Rameswar-git1/informatica-dev
+          ref: main
+          token: ${{ secrets.GH_TOKEN }}
+          path: IICS-CDP-CICD-demo
+          fetch-depth: 0
+
+      - name: Checkout Promotion Pipeline Scripts
+        uses: actions/checkout@v3
+        with:
+          path: iics-promotion-pipeline
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Requirements
+        run: pip install requests
+
+      - name: Set Git User Identity
         run: |
-          python -c "
-import requests
-import json
+          git config --global user.name "Brandon Bir"
+          git config --global user.email "bbird@informatica.com"
+          
 
-IICS_LOGIN_URL = 'https://dm-us.informaticacloud.com/ma/api/v2/user/login'
-USERNAME = '${{ secrets.IICS_USERNAME }}'
-PASSWORD = '${{ secrets.IICS_PASSWORD }}'
-
-response = requests.post(IICS_LOGIN_URL, json={'username': USERNAME, 'password': PASSWORD})
-response.raise_for_status()
-session_id = response.headers['icSessionId']
-print(f'Session ID: {session_id}')
-"
-
-      - name: Re-check-in Assets to IICS Dev Org
+      - name: Set GitHub token for authentication
         run: |
-          python -c "
-import requests
-import json
+          cd ./IICS-CDP-CICD-demo
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
 
-IICS_LOGIN_URL = 'https://dm-us.informaticacloud.com/ma/api/v2/user/login'
-IICS_REPO_URL = 'https://usw5.dm-us.informaticacloud.com/saas/public/core/v3/repository'
-USERNAME = '${{ secrets.IICS_USERNAME }}'
-PASSWORD = '${{ secrets.IICS_PASSWORD }}'
+      - name: Cherry-pick Commit from Dev and Push to UAT
+        run: |
+          cd ./IICS-CDP-CICD-demo
+          git fetch origin
+          if git ls-remote --exit-code --heads origin qa; then
+            git checkout qa
+          else
+            git checkout -b qa main
+            git push origin qa
+          fi
+          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
+          git push origin HEAD:qa
 
-ASSETS_TO_CHECKIN = [
-    {'name': 'MyMapping1', 'type': 'MAPPING'},
-    {'name': 'MyTaskflow1', 'type': 'TASKFLOW'},
-    # Add more assets as needed
-]
+      - name: Get Latest Changes to UAT
+        run: |
+          cd ./IICS-CDP-CICD-demo
+          echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
 
-def login():
-    response = requests.post(IICS_LOGIN_URL, json={'username': USERNAME, 'password': PASSWORD})
-    response.raise_for_status()
-    return response.headers['icSessionId']
-
-def checkin_asset(session_id, asset):
-    headers = {
-        'INFA-SESSION-ID': session_id,
-        'Content-Type': 'application/json'
-    }
-    payload = {
-        'name': asset['name'],
-        'type': asset['type'],
-        'operation': 'CHECKIN'
-    }
-    response = requests.post(f'{IICS_REPO_URL}/actions/checkin', headers=headers, json=payload)
-    if response.status_code == 200:
-        print(f'Successfully checked in: {asset['name']}')
-    else:
-        print(f'Failed to check in {asset['name']}: {response.text}')
-
-if __name__ == '__main__':
-    try:
-        session_id = login()
-        for asset in ASSETS_TO_CHECKIN:
-            checkin_asset(session_id, asset)
-    except Exception as e:
-        print(f'Error: {e}')
-"
+      - name: Login to UAT
+        run: python ./iics-promotion-pipeline/scripts/infa_login.py
 
       - name: Sync and Test UAT Deployment
-        run: python ./source-repo/scripts/infa_update_and_test.py
+        run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
