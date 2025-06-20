@@ -18,18 +18,44 @@ env:
   UAT_IICS_PASSWORD: ${{ secrets.UAT_IICS_PASSWORD }}
 
 jobs:
-  dev_build:
-    name: Review Development Code
+  promote_to_uat:
+    name: Promote Commit to UAT
     runs-on: ubuntu-latest
-    environment: development
+    environment: QA
     env:
-      GH_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
     steps:
-      - name: Checkout Code from Dev
-        uses: actions/checkout@v3
-        with:
-          ref: main
+      - name: Set up Git
+        run: |
+          git config --global user.name "Brandon Bir"
+          git config --global user.email "bbird@informatica.com"
+
+      - name: Clone Source Repository (informatica-dev)
+        run: |
+          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/informatica-dev/informatica-dev.git source-repo
+
+      - name: Clone Target Repository (informatica_qa)
+        run: |
+          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/informatica_qa/informatica_qa.git target-repo
+
+      - name: Cherry-pick Commit from Source and Push to Target
+        run: |
+          cd target-repo
+          git remote add source ../source-repo
+          git fetch source
+
+          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || {
+            if git status | grep -q "nothing to commit, working tree clean"; then
+              echo "Cherry-pick resulted in no changes. Skipping."
+              git cherry-pick --skip
+            else
+              echo "Cherry-pick failed unexpectedly."
+              exit 1
+            fi
+          }
+
+          git push origin main
 
       - name: Set up Python
         uses: actions/setup-python@v3
@@ -39,76 +65,10 @@ jobs:
       - name: Install Python Dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Login to development
-        run: python ./scripts/infa_login.py
-
-      - name: Test Committed Mapping Tasks
-        run: python ./scripts/infa_get_updates.py
-
-  promote_to_uat:
-    name: Complete UAT Promotion
-    runs-on: ubuntu-latest
-    environment: QA
-    needs: dev_build
-    env:
-      GH_TOKEN: ${{ github.token }}
-
-    steps:
-      - name: Checkout UAT Branch
-        uses: actions/checkout@v3
-        with:
-          repository: Rameswar-git1/informatica-dev
-          ref: main
-          token: ${{ secrets.GH_TOKEN }}
-          path: IICS-CDP-CICD-demo
-          fetch-depth: 0
-
-      - name: Checkout Promotion Pipeline Scripts
-        uses: actions/checkout@v3
-        with:
-          path: iics-promotion-pipeline
-
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-
-      - name: Install Python Requirements
-        run: pip install requests
-
-      - name: Set Git User Identity
-        run: |
-          git config --global user.name "Brandon Bir"
-          git config --global user.email "bbird@informatica.com"
-          
-
-      - name: Set GitHub token for authentication
-        run: |
-          cd ./IICS-CDP-CICD-demo
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
-
-      - name: Cherry-pick Commit from Dev and Push to UAT
-        run: |
-          cd ./IICS-CDP-CICD-demo
-          git fetch origin
-          if git ls-remote --exit-code --heads origin qa; then
-            git checkout qa
-          else
-            git checkout -b qa main
-            git push origin qa
-          fi
-          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH}
-          git push origin HEAD:qa
-
-      - name: Get Latest Changes to UAT
-        run: |
-          cd ./IICS-CDP-CICD-demo
-          echo "UAT_COMMIT_HASH=$(git log -1 --pretty=format:%H)" >> $GITHUB_ENV
+          pip install requests
 
       - name: Login to UAT
-        run: python ./iics-promotion-pipeline/scripts/infa_login.py
+        run: python ./source-repo/scripts/infa_login.py
 
       - name: Sync and Test UAT Deployment
-        run: python ./iics-promotion-pipeline/scripts/infa_update_and_test.py
+        run: python ./source-repo/scripts/infa_update_and_test.py
