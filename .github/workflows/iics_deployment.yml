@@ -33,11 +33,11 @@ jobs:
 
       - name: Clone Source Repository (Rameswar-git1/informatica-dev)
         run: |
-          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica-dev.git source-repo
+          git clone --branch main https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Rameswar-git1/informatica-dev.git source-repo
 
-      - name: Clone Target Repository (informatica_qa)
+      - name: Clone Target Repository (Rameswar-git1/informatica_qa)
         run: |
-          git clone --branch main https://x-access-token:${GH_TOKEN}@github.com/Rameswar-git1/informatica_qa.git target-repo
+          git clone --branch main https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Rameswar-git1/informatica_qa.git target-repo
 
       - name: Cherry-pick Commit from Source and Push to Target
         run: |
@@ -45,10 +45,10 @@ jobs:
           git remote add source ../source-repo
           git fetch source
 
-          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || {
+          git cherry-pick --strategy=recursive -X theirs ${{ env.COMMIT_HASH }} || {
             if git status | grep -q "both deleted and modified"; then
               echo "Conflict due to deleted vs modified files. Restoring modified versions."
-              git restore --source=source/${COMMIT_HASH} .
+              git restore --source=source/${{ env.COMMIT_HASH }} .
               git add .
               git cherry-pick --continue
             elif git status | grep -q "nothing to commit, working tree clean"; then
