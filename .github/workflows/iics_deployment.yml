@@ -1,3 +1,4 @@
+
 name: Promote Dev to UAT
 
 on:
@@ -84,8 +85,68 @@ jobs:
           pip install --upgrade pip
           pip install requests
 
-      - name: Login to UAT
-        run: python ./source-repo/scripts/infa_login.py
+      - name: Login to IICS Dev Org
+        run: |
+          python -c "
+import requests
+import json
+
+IICS_LOGIN_URL = 'https://dm-us.informaticacloud.com/ma/api/v2/user/login'
+USERNAME = '${{ secrets.IICS_USERNAME }}'
+PASSWORD = '${{ secrets.IICS_PASSWORD }}'
+
+response = requests.post(IICS_LOGIN_URL, json={'username': USERNAME, 'password': PASSWORD})
+response.raise_for_status()
+session_id = response.headers['icSessionId']
+print(f'Session ID: {session_id}')
+"
+
+      - name: Re-check-in Assets to IICS Dev Org
+        run: |
+          python -c "
+import requests
+import json
+
+IICS_LOGIN_URL = 'https://dm-us.informaticacloud.com/ma/api/v2/user/login'
+IICS_REPO_URL = 'https://usw5.dm-us.informaticacloud.com/saas/public/core/v3/repository'
+USERNAME = '${{ secrets.IICS_USERNAME }}'
+PASSWORD = '${{ secrets.IICS_PASSWORD }}'
+
+ASSETS_TO_CHECKIN = [
+    {'name': 'MyMapping1', 'type': 'MAPPING'},
+    {'name': 'MyTaskflow1', 'type': 'TASKFLOW'},
+    # Add more assets as needed
+]
+
+def login():
+    response = requests.post(IICS_LOGIN_URL, json={'username': USERNAME, 'password': PASSWORD})
+    response.raise_for_status()
+    return response.headers['icSessionId']
+
+def checkin_asset(session_id, asset):
+    headers = {
+        'INFA-SESSION-ID': session_id,
+        'Content-Type': 'application/json'
+    }
+    payload = {
+        'name': asset['name'],
+        'type': asset['type'],
+        'operation': 'CHECKIN'
+    }
+    response = requests.post(f'{IICS_REPO_URL}/actions/checkin', headers=headers, json=payload)
+    if response.status_code == 200:
+        print(f'Successfully checked in: {asset['name']}')
+    else:
+        print(f'Failed to check in {asset['name']}: {response.text}')
+
+if __name__ == '__main__':
+    try:
+        session_id = login()
+        for asset in ASSETS_TO_CHECKIN:
+            checkin_asset(session_id, asset)
+    except Exception as e:
+        print(f'Error: {e}')
+"
 
       - name: Sync and Test UAT Deployment
         run: python ./source-repo/scripts/infa_update_and_test.py
