@@ -5,7 +5,7 @@ import time
 import sys
 
 # Validate required environment variables
-required_env_vars = ['IICS_POD_URL', 'uat_sessionId', 'UAT_COMMIT_HASH']
+required_env_vars = ['IICS_POD_URL', 'uat_sessionId', 'UAT_COMMIT_HASH', 'GH_TOKEN', 'GITHUB_REPO']
 for var in required_env_vars:
     if not os.getenv(var):
         print(f"Missing required environment variable: {var}")
@@ -14,6 +14,8 @@ for var in required_env_vars:
 URL = os.environ['IICS_POD_URL']
 UAT_SESSION_ID = os.environ['uat_sessionId']
 UAT_COMMIT_HASH = os.environ['UAT_COMMIT_HASH']
+GITHUB_TOKEN = os.environ['GH_TOKEN']
+GITHUB_REPO = os.environ['GITHUB_REPO']
 
 HEADERS = {
     "Content-Type": "application/json; charset=utf-8",
@@ -24,6 +26,21 @@ HEADERS_V2 = {
     "icSessionId": UAT_SESSION_ID
 }
 BODY = {"commitHash": UAT_COMMIT_HASH}
+
+# Function to check if commit exists in GitHub
+def check_commit_in_github(repo, commit_hash, token):
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    url = f"https://api.github.com/repos/{repo}/commits/{commit_hash}"
+    response = requests.get(url, headers=headers)
+    return response.status_code == 200
+
+# Check if the commit exists in GitHub
+if not check_commit_in_github(GITHUB_REPO, UAT_COMMIT_HASH, GITHUB_TOKEN):
+    print(f"Commit {UAT_COMMIT_HASH} not found in GitHub repository {GITHUB_REPO}.")
+    sys.exit(1)
 
 print(f"Syncing the commit {UAT_COMMIT_HASH} to the UAT repo")
 
