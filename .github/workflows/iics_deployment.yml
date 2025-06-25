@@ -23,8 +23,6 @@ jobs:
     name: Review Development Code
     runs-on: ubuntu-latest
     environment: development
-    env:
-      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout Code from Dev
@@ -53,8 +51,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: QA
     needs: dev_build
-    env:
-      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout UAT Branch
@@ -87,7 +83,7 @@ jobs:
       - name: Set GitHub token for authentication
         run: |
           cd ./IICS-CDP-CICD-demo
-          git remote set-url origin https://x-access-token:${{GH_TOKEN}}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
 
       - name: Cherry-pick Commit from Dev and Push to UAT
         run: |
@@ -100,7 +96,7 @@ jobs:
             git push origin qa
           fi
 
-          git cherry-pick --strategy=recursive -X theirs ${{COMMIT_HASH}} || {
+          git cherry-pick --strategy=recursive -X theirs ${COMMIT_HASH} || {
             if git status | grep -q "nothing to commit"; then
               echo "Cherry-pick resulted in no changes. Skipping."
               git cherry-pick --skip
